@@ -1,5 +1,5 @@
 import React from "react";
-import FormikControl from "../../Formik/FormikControl";
+import FormikControl from "./FormikControl";
 import { Form, Formik } from "formik";
 import { Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";

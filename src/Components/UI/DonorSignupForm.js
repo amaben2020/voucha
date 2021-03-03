@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect, Component } from "react";
-import FormikControl from "../../Formik/FormikControl";
+import React, { useState, useContext, useEffect } from "react";
+import FormikControl from "./../FormControl/FormikControl";
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 import { Button } from "@material-ui/core";
@@ -7,124 +7,92 @@ import {
 	auth,
 	createUserProfileDocument,
 } from "./../../firebase/firebase.utils";
-import FormInput from "./../../Formik/FormControl/FormControl";
-export class EnrollmentForm extends Component {
-	state = {
-		displayName: "",
-		email: "",
-		password: "",
-		confirmPassword: "",
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import FormInput from "./../FormControl/FormControl";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+export const EnrollmentForm = ({ props, setNamee }) => {
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [username, setUsername] = useState("");
+	const theme = useTheme();
+	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+	const { loginWithPopup } = useAuth0();
+
+	const handleName = (e) => {
+		setName(e.target.value);
+	};
+	const handleEmail = (e) => {
+		setEmail(e.target.value);
+	};
+	const handlePassword = (e) => {
+		setPassword(e.target.value);
 	};
 
-	handleSubmit = async (event) => {
-		event.preventDefault();
-		const { displayName, email, password, confirmPassword } = this.state;
-		if (password !== confirmPassword) {
-			alert("Passwords don't match");
-			return;
-		}
+	const user = username.name;
+	console.log("This is: ", user);
 
-		try {
-			const { user } = await auth.createUserWithEmailAndPassword(
-				email,
-				password
-			);
-			await createUserProfileDocument(user, { displayName });
-			this.setState({
-				displayName: "",
-				email: "",
-				password: "",
-				confirmPassword: "",
-			});
-		} catch (error) {
-			console.log("Something went wrong", error);
-		}
-	};
+	return (
+		<div className="form-control">
+			<p>{user}</p>
+			<form className="sign-up-form">
+				<div className="group">
+					<FormInput
+						className="form-input"
+						name="name"
+						type="text"
+						label="Display Name"
+						value={name}
+						onChange={handleName}
+						required
+					/>
+					<FormInput
+						className="form-input"
+						name="email"
+						label="Email"
+						type="email"
+						value={email}
+						onChange={handleEmail}
+						required
+					/>
+					<FormInput
+						className="form-input"
+						name="password"
+						label="Password (min: 6 chars)"
+						type="password"
+						value={password}
+						onChange={handlePassword}
+						required
+					/>
+				</div>
+				<div className="buttons">
+					<button
+						style={{
+							marginTop: "2em",
+							marginLeft: matchesXS ? "5em" : "8em",
+							background: matchesXS ? "#3E3B6B" : "#3E3B6B",
+							fontSize: "1rem",
+							fontWeight: 700,
+							cursor: "pointer",
+							boxShadow: "1px 1px 5px rgba(0,0,0, 0.75)",
+							border: "1px solid #fff",
+							padding: "1em",
+							borderRadius: "1.5em",
+							width: "10em",
+							color: matchesXS ? "#3E3B6B" : "#fff",
+						}}
+						className="signup"
+						type="submit"
+						onClick={() => loginWithPopup()}
+					>
+						SIGN UP
+					</button>
+				</div>
+			</form>
+		</div>
+	);
+};
 
-	handleChange = (e) => {
-		const { name, value } = e.target;
-		this.setState({
-			[name]: value,
-		});
-	};
-	render() {
-		const { displayName, email, password, confirmPassword } = this.state;
-		return (
-			<div className="form-control">
-				<form className="sign-up-form" onSubmit={this.handleSubmit}>
-					<div className="group">
-						<FormInput
-							className="form-input"
-							name="displayName"
-							type="text"
-							label="Display Name"
-							value={displayName}
-							handleChange={this.handleChange}
-							required
-						/>
-						<FormInput
-							className="form-input"
-							name="email"
-							label="Email"
-							type="email"
-							value={email}
-							handleChange={this.handleChange}
-							required
-						/>
-						<FormInput
-							className="form-input"
-							name="password"
-							label="Password (min: 6 chars)"
-							type="password"
-							value={password}
-							handleChange={this.handleChange}
-							required
-						/>
-						<FormInput
-							className="form-input"
-							name="confirmPassword"
-							type="password"
-							label="Confirm Password"
-							value={confirmPassword}
-							handleChange={this.handleChange}
-							required
-						/>
-					</div>
-
-					<div className="buttons">
-						<button className="signup" type="submit">
-							SIGN UP
-						</button>
-					</div>
-				</form>
-			</div>
-		);
-	}
-}
 export default EnrollmentForm;
-
-/////
-
-{
-	/**
-
-	import React, { Component } from "react";
-import "./signup.styles.css";
-import {
-	FormControl,
-	InputLabel,
-	Input,
-	FormHelperText,
-} from "@material-ui/core";
-import FormInput from "../../../form-input/FormInput";
-import {
-	auth,
-	createUserProfileDocument,
-} from "../../../firebase/firebase-utils";
-import CustomButton from "../../custom-button/CustomButton";
-
-
-export default Signup;
-
-*/
-}

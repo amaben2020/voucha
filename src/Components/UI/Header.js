@@ -5,7 +5,7 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles } from "@material-ui/styles";
 import logo from "../../assets/voucha_logo.svg";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -20,12 +20,13 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { auth } from "./../../firebase/firebase.utils";
 import { Grid, Typography } from "@material-ui/core";
 import { connect } from "react-redux";
-
+import { useAuth0 } from "@auth0/auth0-react";
+import JSONpretty from "react-json-pretty";
 //This is the elevation scroll function
 function ElevationScroll(props) {
 	const { children } = props;
 	const { currentUser } = props;
-	console.log(currentUser);
+	const { name } = props;
 
 	const trigger = useScrollTrigger({
 		disableHysteresis: true,
@@ -157,6 +158,7 @@ const mapStateToProps = (state) => ({
 
 //we then use the elevationScroll function in MaterialUI
 function Header(props) {
+	const { logout, isAuthenticated, user } = useAuth0();
 	const classes = useStyles();
 	const theme = useTheme();
 	const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -480,7 +482,7 @@ function Header(props) {
 						>
 							SIGN IN
 						</Button>
-						{!props.currentUser ? (
+						{!isAuthenticated ? (
 							<Button
 								component={Link}
 								to="/signup"
@@ -495,19 +497,20 @@ function Header(props) {
 							</Button>
 						) : null}
 						{/** FOR AUTH */}
-						{props.currentUser ? (
+						{isAuthenticated ? (
 							<Grid style={{ marginLeft: "-30px" }}>
 								<Grid>
 									<Typography
 										style={{ fontSize: "14px", fontStyle: "italics" }}
 									>
-										Welcome, {props.currentUser.displayName}{" "}
+										{/**<JSONpretty data={user} /> */}
+										Welcome, {user.name}{" "}
 									</Typography>
 								</Grid>
 								<Grid>
 									<Button
 										component={Link}
-										onClick={() => auth.signOut()}
+										onClick={() => logout()}
 										variant="contained"
 										color="secondary"
 										component={Link}

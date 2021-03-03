@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import yellow_flower1 from "../../assets/yellow_flower1.PNG";
 import yellow_flower2 from "../../assets/yellow_flower2.PNG";
-import "../../Formik__style/App.module.css";
+import "./App.module.css";
 import Hidden from "@material-ui/core/Hidden";
 import DonorSigninForm from "./DonorSigninForm";
 
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function UserSignIn(props) {
+export default function UserSignIn({ props, setName }) {
 	const classes = useStyles();
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
@@ -155,7 +155,7 @@ export default function UserSignIn(props) {
 					marginRight: matchesXS ? "20em" : undefined,
 				}}
 			>
-				<DonorSigninForm />
+				<DonorSigninForm setName={setName} />
 			</Grid>{" "}
 		</Grid>
 	);

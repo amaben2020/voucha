@@ -8,7 +8,7 @@ import VendorSignUp2 from "../../assets/vendorSignup2.png";
 import { Link } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import VenorSignupForm from "../UI/VendorSignupForm";
-import "../../Formik__style/App.module.css";
+import "./App.module.css";
 
 const useStyles = makeStyles((theme) => ({
 	learnButton: {

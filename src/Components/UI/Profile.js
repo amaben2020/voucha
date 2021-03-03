@@ -8,7 +8,7 @@ import mobileBackground from "../../assets/mobileBackground.jpg";
 import { useMediaQuery } from "@material-ui/core";
 import ProfileForm from "./ProfileForm";
 import moment from "moment";
-import DonorProfileForm2 from "../UI/DonorProfileForm2";
+// import DonorProfileForm2 from "../UI/DonorProfileForm2";
 
 const useStyles = makeStyles((theme) => ({
 	background: {
@@ -280,7 +280,7 @@ export default function DonorDashboard(props) {
 
 										<Grid>
 											<Grid item container direction="column">
-												<DonorProfileForm2 />
+												{/* <DonorProfileForm2 /> */}
 												<Grid item container style={{ marginTop: "1em" }}>
 													<Grid>
 														<Button

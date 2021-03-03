@@ -1,46 +1,75 @@
 import React, { useContext, useEffect, useState } from "react";
-import FormikControl from "../../Formik/FormikControl";
+import FormikControl from "./FormikControl";
 import { Form, Formik } from "formik";
 import { Button } from "@material-ui/core";
 import * as yup from "yup";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
-function DonorSigninForm(props) {
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
+function DonorSigninForm({ props, setName }) {
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-	const initialValues = {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const initialState = {
+		name: "",
 		email: "",
-		password: "",
 	};
-	const [state, setState] = useState(initialValues);
+	const [username, setUsername] = useState(initialState);
+
+	const { loginWithRedirect } = useAuth0();
+
 	const validationSchema = yup.object({
 		email: yup.string().email("invalid email format"),
 	});
-
-	//SENDING THE REQUEST TO GOOGLE SERVER
-	const handleSubmit = async (event) => {
-		event.preventDefault();
-		const { email, password } = state;
-		try {
-			await auth.signInWithEmailAndPassword(email, password);
-			setState({
-				email: "",
-				password: "",
-			});
-		} catch (error) {
-			console.log("There was an error", error);
-		}
+	const handleChange = (e) => {
+		const email = e.target.value;
+		setEmail(email);
 	};
 
-	const handleChange = (e) => {
+	const handleChangePassword = (e) => {
+		const password = e.target.value;
+		setPassword(password);
+	};
+
+	const handleSubmit = (e) => {
 		e.preventDefault();
-		const { value, name } = e.target;
-		setState({
-			[name]: value,
+		fetch("http://localhost:4001/signin", {
+			method: "post",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({
+				email,
+				password,
+			}),
 		});
 	};
+
+	//SENDING THE REQUEST TO GOOGLE SERVER
+	// const handleSubmit = async (event) => {
+	// 	event.preventDefault();
+	// 	const email = email;
+	// 	const password = password;
+	// 	console.log(password);
+	// 	try {
+	// 		const response = await axios
+	// 			.post("http://localhost:4001/signin", {
+	// 				email,
+	// 				password,
+	// 			})
+	// 			.then((res) => {
+	// 				console.log(res);
+	// 			})
+	// 			.catch((err) => {
+	// 				console.log(err);
+	// 			});
+	// 	} catch (error) {
+	// 		console.log("There was an error", error);
+	// 	}
+	// };
+
 	return (
 		<div
 			className="form-control"
@@ -48,7 +77,7 @@ function DonorSigninForm(props) {
 				height: matchesXS ? "20em" : "38.7em",
 			}}
 		>
-			<Formik validationSchema={validationSchema} initialValues={initialValues}>
+			<Formik>
 				{(formik) => {
 					return (
 						<Form
@@ -70,16 +99,30 @@ function DonorSigninForm(props) {
 								type="email"
 								label="Email"
 								name="email"
-								value={state.email}
+								value={email}
 								onChange={handleChange}
 								name="email"
 								style={{
-									marginLeft: matchesXS ? "0.2em" : "2em",
+									marginLeft: matchesXS ? "0.2em" : "0.7em",
 									width: matchesXS ? "20em" : "25em",
 									borderRadius: "1rem",
 								}}
 							/>
 							<FormikControl
+								control="input"
+								style={{
+									marginLeft: matchesXS ? "0.2em" : "0.7em",
+									width: matchesXS ? "20em" : "25em",
+									borderRadius: "1rem",
+								}}
+								type="password"
+								required
+								label="Password"
+								name="password"
+								value={password}
+								onChange={handleChangePassword}
+							/>
+							{/* <FormikControl
 								control="chakrainput"
 								type="password"
 								required
@@ -93,10 +136,10 @@ function DonorSigninForm(props) {
 									width: matchesXS ? "20em" : "25em",
 									borderRadius: "1rem",
 								}}
-							/>
+							/> */}
 							<Button
 								type="submit"
-								onClick={signInWithGoogle}
+								onClick={() => loginWithRedirect()}
 								style={{
 									marginTop: "2em",
 									marginLeft: matchesXS ? "5em" : "8em",

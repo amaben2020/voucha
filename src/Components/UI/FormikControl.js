@@ -1,11 +1,9 @@
 import React from "react";
-import Input from "../Formik/Input";
-import TextArea from "../Formik/TextArea";
-import Select from "../Formik/Select";
-import RadioButtons from "../Formik/RadioButtons";
-import CheckboxGroup from "../Formik/CheckboxGroup";
-import DatePicker from "../Formik/DatePicker";
-import Chakra_Login from "./CHAKRA_LOGIN/Chakra_Login";
+import Input from "./Input";
+import TextArea from "./TextArea";
+import Select from "./Select";
+import RadioButtons from "./RadioButtons";
+import CheckboxGroup from "./../FormControl/CheckboxGroup";
 
 function FormikControl(props) {
 	const { control, ...rest } = props;
@@ -20,10 +18,7 @@ function FormikControl(props) {
 			return <RadioButtons {...rest} />;
 		case "checkbox":
 			return <CheckboxGroup {...rest} />;
-		case "date":
-			return <DatePicker {...rest} />;
-		case "chakrainput":
-			return <Chakra_Login {...rest} />;
+
 		default:
 			return null;
 	}

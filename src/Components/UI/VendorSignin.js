@@ -7,7 +7,7 @@ import VendorSignUp from "../../assets/vendorSignup.png";
 import { Link } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import VenorSigninForm from "../UI/VendorSigninForm";
-import "../../Formik__style/App.module.css";
+import "./App.module.css";
 import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles((theme) => ({

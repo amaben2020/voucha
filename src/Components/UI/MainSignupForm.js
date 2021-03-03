@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormikControl from "../../Formik/FormikControl";
+import FormikControl from "./FormikControl";
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";

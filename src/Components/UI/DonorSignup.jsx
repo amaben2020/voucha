@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import DonorSignupForm from "../UI/DonorSignupForm";
 import mobileBackground from "../../assets/mobileBackground.jpg";
-import { Link } from "react-router-dom";
+import { Link, useHistory, withRouter } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import hand from "../../assets/hands.png";
 
-import "../../Formik__style/App.module.css";
+import "./App.module.css";
 
 const useStyles = makeStyles((theme) => ({
 	learnButton: {
@@ -80,10 +80,18 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function DonorSignUp(props) {
+function DonorSignUp({ props }) {
 	const classes = useStyles();
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+	const { isAuthenticated } = useAuth0();
+	let history = useHistory();
+
+	useEffect(() => {
+		if (isAuthenticated) {
+			props.history.push("/donordashboard");
+		}
+	}, [isAuthenticated]);
 
 	return (
 		<Grid
@@ -162,3 +170,4 @@ export default function DonorSignUp(props) {
 		</Grid>
 	);
 }
+export default withRouter(DonorSignUp);
