@@ -5,7 +5,7 @@ import theme from "./UI/Theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Footer from "./UI/Footer";
 import LandingPage from "./UI/LandingPage";
-import { ChakraProvider } from "@chakra-ui/react";
+
 import Wallet from "./UI/Wallet";
 import About from "../Components/UI/About";
 import HowItWorks from "./UI/HowItWorks";
@@ -52,43 +52,42 @@ function App() {
 	const { isAuthenticated } = useAuth0();
 	return (
 		<ThemeProvider theme={theme}>
-			<ChakraProvider>
-				{" "}
-				<BrowserRouter>
-					<Header
-						// name={user.name}
-						// user={}
-						// currentUser={setCurrentUser}
-						value={value}
-						setValue={setValue}
-						selectedIndex={selectedIndex}
-						setSelectedIndex={setSelectedIndex}
-					/>
+			{" "}
+			<BrowserRouter>
+				<Header
+					// name={user.name}
+					// user={}
+					// currentUser={setCurrentUser}
+					value={value}
+					setValue={setValue}
+					selectedIndex={selectedIndex}
+					setSelectedIndex={setSelectedIndex}
+				/>
 
-					<Switch>
-						<Route
-							exact
-							path="/"
-							render={(props) => (
-								<LandingPage
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/signup"
-							render={(props) => (
-								<SignUp
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						{/* <Route
+				<Switch>
+					<Route
+						exact
+						path="/"
+						render={(props) => (
+							<LandingPage
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/signup"
+						render={(props) => (
+							<SignUp
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					{/* <Route
 							exact
 							path="/donordashboard"
 							render={(props) =>
@@ -103,62 +102,62 @@ function App() {
 								)
 							}
 						/> */}
-						<Route
-							exact
-							path="/donordashboard"
-							render={(props) => (
-								<DonorDashboard
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/donorsignup"
-							render={(props) => (
-								<DonorSignUp
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/wallet"
-							render={(props) => (
-								<Wallet
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/profile"
-							render={(props) => (
-								<Profile
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/fundwallet"
-							render={(props) => (
-								<FundWallet
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						{/* <Route
+					<Route
+						exact
+						path="/donordashboard"
+						render={(props) => (
+							<DonorDashboard
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/donorsignup"
+						render={(props) => (
+							<DonorSignUp
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/wallet"
+						render={(props) => (
+							<Wallet
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/profile"
+						render={(props) => (
+							<Profile
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/fundwallet"
+						render={(props) => (
+							<FundWallet
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					{/* <Route
 						exact
 						path="/donorfundwallet"
 						render={(props) => (
@@ -169,62 +168,62 @@ function App() {
 							/>
 						)}
 					/> */}
-						<Route
-							exact
-							path="/generatevoucher"
-							render={(props) => (
-								<GenerateVoucher
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/vendorwallet"
-							render={(props) => (
-								<VendorWallet
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/generatevouchers"
-							render={(props) => (
-								<GenerateVouchers
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/generatevouchers2"
-							render={(props) => (
-								<GenerateVouchers2
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/distributevouchers"
-							render={(props) => (
-								<DistributeVouchers
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						{/* <Route
+					<Route
+						exact
+						path="/generatevoucher"
+						render={(props) => (
+							<GenerateVoucher
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/vendorwallet"
+						render={(props) => (
+							<VendorWallet
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/generatevouchers"
+						render={(props) => (
+							<GenerateVouchers
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/generatevouchers2"
+						render={(props) => (
+							<GenerateVouchers2
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/distributevouchers"
+						render={(props) => (
+							<DistributeVouchers
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					{/* <Route
 						exact
 						path="/vendorprofile"
 						render={(props) => (
@@ -235,29 +234,29 @@ function App() {
 							/>
 						)}
 					/> */}
-						<Route
-							exact
-							path="/distributevouchers2"
-							render={(props) => (
-								<DistributeVouchers2
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/specificdemography"
-							render={(props) => (
-								<SpecificDemography
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						{/* <Route
+					<Route
+						exact
+						path="/distributevouchers2"
+						render={(props) => (
+							<DistributeVouchers2
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/specificdemography"
+						render={(props) => (
+							<SpecificDemography
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					{/* <Route
 						exact
 						path="/vendorredeemvoucher"
 						render={(props) => (
@@ -268,18 +267,18 @@ function App() {
 							/>
 						)}
 					/> */}
-						<Route
-							exact
-							path="/donorsignin"
-							render={(props) => (
-								<DonorSignin
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						{/* <Route
+					<Route
+						exact
+						path="/donorsignin"
+						render={(props) => (
+							<DonorSignin
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					{/* <Route
 							exact
 							path="/donorsignin"
 							render={(props) =>
@@ -293,40 +292,40 @@ function App() {
 								)
 							}
 						/> */}
-						<Route
-							exact
-							path="/vendorsignin"
-							render={(props) => (
-								<VendorSignin
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/specificdemography2"
-							render={(props) => (
-								<SpecificDemography2
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/vendorsignup"
-							render={(props) => (
-								<VendorSignUp
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						{/* <Route
+					<Route
+						exact
+						path="/vendorsignin"
+						render={(props) => (
+							<VendorSignin
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/specificdemography2"
+						render={(props) => (
+							<SpecificDemography2
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/vendorsignup"
+						render={(props) => (
+							<VendorSignUp
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					{/* <Route
 						exact
 						path="/usersignin"
 						render={(props) => (
@@ -337,180 +336,179 @@ function App() {
 							/>
 						)}
 					/> */}
-						<Route
-							exact
-							path="/signindonorvendor"
-							render={(props) => (
-								<SignInDonorVendor
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/howItWorks"
-							render={(props) => (
-								<HowItWorks
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/howItWorks1"
-							render={(props) => (
-								<HowItWorks1
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/howitworks2"
-							render={(props) => (
-								<HowItWorks2
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/howitworks5"
-							render={(props) => (
-								<HowItWorks5
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/howitworks4"
-							render={(props) => (
-								<HowItWorks4
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/mainsignup"
-							render={(props) => (
-								<MainSignup
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/howitworks3"
-							render={(props) => (
-								<HowItWorks3
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>{" "}
-						<Route
-							exact
-							path="/vendorwithdrawingfromwallet"
-							render={(props) => (
-								<VendorWithdrawingFromWallet
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/donorwithdrawingfromwallet"
-							render={(props) => (
-								<DonorWithdrawingFromWallet
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/howitworks3"
-							render={(props) => (
-								<HowItWorks3
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/howitworks5"
-							render={(props) => (
-								<HowItWorks5
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/about-us"
-							render={(props) => (
-								<About
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/why-voucha"
-							render={(props) => (
-								<WhyVoucha
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-						<Route
-							exact
-							path="/faq"
-							render={(props) => (
-								<FAQ
-									{...props}
-									setValue={setValue}
-									setSelectedIndex={setSelectedIndex}
-								/>
-							)}
-						/>
-					</Switch>
-					<Footer
-						value={value}
-						setValue={setValue}
-						selectedIndex={selectedIndex}
-						setSelectedIndex={setSelectedIndex}
+					<Route
+						exact
+						path="/signindonorvendor"
+						render={(props) => (
+							<SignInDonorVendor
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
 					/>
-				</BrowserRouter>
-			</ChakraProvider>
+					<Route
+						exact
+						path="/howItWorks"
+						render={(props) => (
+							<HowItWorks
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/howItWorks1"
+						render={(props) => (
+							<HowItWorks1
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/howitworks2"
+						render={(props) => (
+							<HowItWorks2
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/howitworks5"
+						render={(props) => (
+							<HowItWorks5
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/howitworks4"
+						render={(props) => (
+							<HowItWorks4
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/mainsignup"
+						render={(props) => (
+							<MainSignup
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/howitworks3"
+						render={(props) => (
+							<HowItWorks3
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>{" "}
+					<Route
+						exact
+						path="/vendorwithdrawingfromwallet"
+						render={(props) => (
+							<VendorWithdrawingFromWallet
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/donorwithdrawingfromwallet"
+						render={(props) => (
+							<DonorWithdrawingFromWallet
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/howitworks3"
+						render={(props) => (
+							<HowItWorks3
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/howitworks5"
+						render={(props) => (
+							<HowItWorks5
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/about-us"
+						render={(props) => (
+							<About
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/why-voucha"
+						render={(props) => (
+							<WhyVoucha
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+					<Route
+						exact
+						path="/faq"
+						render={(props) => (
+							<FAQ
+								{...props}
+								setValue={setValue}
+								setSelectedIndex={setSelectedIndex}
+							/>
+						)}
+					/>
+				</Switch>
+				<Footer
+					value={value}
+					setValue={setValue}
+					selectedIndex={selectedIndex}
+					setSelectedIndex={setSelectedIndex}
+				/>
+			</BrowserRouter>
 		</ThemeProvider>
 	);
 }

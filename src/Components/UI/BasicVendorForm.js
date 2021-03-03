@@ -1,7 +1,7 @@
 import React from "react";
 import FormikControl from "../../Formik/FormikControl";
 import { Form, Formik } from "formik";
-import * as yup from "yup";
+// import * as yup from "yup";
 function EnrollmentForm() {
 	function myFunction() {
 		document.getElementById("form-control").style.overflow = "scroll";
@@ -49,17 +49,17 @@ function EnrollmentForm() {
 		console.log("FORM DATA", values);
 	};
 
-	const validationSchema = yup.object({
-		name: yup.string(),
-		number: yup.string(),
-		course: yup.string().required("Required"),
-		email: yup.string().email("invalid email format"),
-	});
+	// const validationSchema = yup.object({
+	// 	name: yup.string(),
+	// 	number: yup.string(),
+	// 	course: yup.string().required("Required"),
+	// 	email: yup.string().email("invalid email format"),
+	// });
 
 	return (
 		<div className="form-control">
 			<Formik
-				validationSchema={validationSchema}
+				// validationSchema={validationSchema}
 				initialValues={initialValues}
 				onSubmit={onSubmit}
 			>

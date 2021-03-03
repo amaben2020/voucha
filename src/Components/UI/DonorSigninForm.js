@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import FormikControl from "./FormikControl";
 import { Form, Formik } from "formik";
 import { Button } from "@material-ui/core";
-import * as yup from "yup";
+// import * as yup from "yup";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
@@ -22,13 +22,13 @@ function DonorSigninForm({ props, setName }) {
 
 	const { loginWithRedirect } = useAuth0();
 
-	const validationSchema = yup.object({
-		email: yup.string().email("invalid email format"),
-	});
-	const handleChange = (e) => {
-		const email = e.target.value;
-		setEmail(email);
-	};
+	// const validationSchema = yup.object({
+	// 	email: yup.string().email("invalid email format"),
+	// });
+	// const handleChange = (e) => {
+	// 	const email = e.target.value;
+	// 	setEmail(email);
+	// };
 
 	const handleChangePassword = (e) => {
 		const password = e.target.value;
@@ -100,7 +100,7 @@ function DonorSigninForm({ props, setName }) {
 								label="Email"
 								name="email"
 								value={email}
-								onChange={handleChange}
+								// onChange={handleChange}
 								name="email"
 								style={{
 									marginLeft: matchesXS ? "0.2em" : "0.7em",

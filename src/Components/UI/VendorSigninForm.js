@@ -4,7 +4,7 @@ import { Form, Formik } from "formik";
 import { Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import * as yup from "yup";
+// import * as yup from "yup";
 function VendorSigninForm() {
 	const initialValues = {
 		email: "",
@@ -16,9 +16,9 @@ function VendorSigninForm() {
 		console.log("FORM DATA", values);
 	};
 
-	const validationSchema = yup.object({
-		email: yup.string().email("invalid email format"),
-	});
+	// const validationSchema = yup.object({
+	// 	email: yup.string().email("invalid email format"),
+	// });
 
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
@@ -26,7 +26,7 @@ function VendorSigninForm() {
 	return (
 		<div className="form-control" style={{ height: "41.4em" }}>
 			<Formik
-				validationSchema={validationSchema}
+				// validationSchema={validationSchema}
 				initialValues={initialValues}
 				onSubmit={onSubmit}
 			>

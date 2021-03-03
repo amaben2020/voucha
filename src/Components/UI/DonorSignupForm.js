@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import FormikControl from "./../FormControl/FormikControl";
 import { Form, Formik } from "formik";
-import * as yup from "yup";
+// import * as yup from "yup";
 import { Button } from "@material-ui/core";
 import {
 	auth,
