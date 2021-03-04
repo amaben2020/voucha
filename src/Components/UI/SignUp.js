@@ -80,7 +80,11 @@ export default function CallToAction(props) {
 				<Grid item container md={2} style={{ marginLeft: "5em" }}>
 					<Grid container direction="column">
 						<Grid item>
-							<img src={hand} alt="hand-two" style={{ maxHeight: "22em" }} />
+							<img
+								src={hand}
+								alt="hand-two"
+								style={{ maxHeight: "22em", width: "60%" }}
+							/>
 						</Grid>
 					</Grid>
 				</Grid>

@@ -169,4 +169,4 @@ function DonorSignUp({ props }) {
 		</Grid>
 	);
 }
-export default withRouter(DonorSignUp);
+export default DonorSignUp;
