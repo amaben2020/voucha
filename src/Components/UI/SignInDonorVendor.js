@@ -85,7 +85,7 @@ export default function CallToAction(props) {
 			className={classes.callToAction}
 			justify="space-between"
 		>
-			<Grid item container md={2} style={{ marginLeft: "5em" }}>
+			<Grid item container md={2} style={{ marginLeft: "2em" }}>
 				<Hidden mdDown>
 					<Grid container direction="column">
 						<Grid item>
