@@ -99,7 +99,7 @@ function App() {
 								)
 							}
 						/> */}
-					<PrivateRoute
+					<Route
 						exact
 						path="/donordashboard"
 						render={(props) => (
