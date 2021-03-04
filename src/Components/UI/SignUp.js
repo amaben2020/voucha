@@ -94,7 +94,7 @@ export default function CallToAction(props) {
 				item
 				container
 				md={4}
-				style={{ marginLeft: "5em", paddingBottom: "20em" }}
+				style={{ marginLeft: "1em", paddingBottom: "20em" }}
 			>
 				<Grid container direction="column">
 					<Hidden mdDown>
