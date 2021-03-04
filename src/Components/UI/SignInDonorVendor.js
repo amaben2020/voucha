@@ -99,7 +99,7 @@ export default function CallToAction(props) {
 				container
 				md={4}
 				style={{
-					marginLeft: "5em",
+					marginLeft: "1em",
 					paddingBottom: matchesXS ? 0 : matchesSM ? 0 : "20em",
 				}}
 			>
