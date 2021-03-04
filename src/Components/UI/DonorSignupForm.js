@@ -12,7 +12,7 @@ export const EnrollmentForm = ({ props, setNamee }) => {
 
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-	const { loginWithPopup } = useAuth0();
+	const { loginWithRedirect } = useAuth0();
 
 	const handleName = (e) => {
 		setName(e.target.value);
@@ -74,7 +74,7 @@ export const EnrollmentForm = ({ props, setNamee }) => {
 						}}
 						className="signup"
 						type="submit"
-						onClick={() => loginWithPopup()}
+						onClick={() => loginWithRedirect()}
 					>
 						SIGN UP
 					</button>
