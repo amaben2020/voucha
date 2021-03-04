@@ -59,7 +59,6 @@ export default function HowItWorks3(props) {
 	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
 
 	return (
 		<Grid
@@ -274,6 +273,7 @@ export default function HowItWorks3(props) {
 							}}
 						>
 							<img
+								alt="mobile dev"
 								src={mobile}
 								style={{
 									height: matchesXS ? "20em" : matchesSM ? "35em" : "35em",

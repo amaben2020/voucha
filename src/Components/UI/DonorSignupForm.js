@@ -1,22 +1,15 @@
-import React, { useState, useContext, useEffect } from "react";
-import FormikControl from "./../FormControl/FormikControl";
-import { Form, Formik } from "formik";
-// import * as yup from "yup";
-import { Button } from "@material-ui/core";
-import {
-	auth,
-	createUserProfileDocument,
-} from "./../../firebase/firebase.utils";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import React, { useState } from "react";
+
+import { useTheme } from "@material-ui/core/styles";
 import FormInput from "./../FormControl/FormControl";
-import axios from "axios";
+
 import { useAuth0 } from "@auth0/auth0-react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 export const EnrollmentForm = ({ props, setNamee }) => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [username, setUsername] = useState("");
+
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const { loginWithPopup } = useAuth0();
@@ -31,12 +24,8 @@ export const EnrollmentForm = ({ props, setNamee }) => {
 		setPassword(e.target.value);
 	};
 
-	const user = username.name;
-	console.log("This is: ", user);
-
 	return (
 		<div className="form-control">
-			<p>{user}</p>
 			<form className="sign-up-form">
 				<div className="group">
 					<FormInput

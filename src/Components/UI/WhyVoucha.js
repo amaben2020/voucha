@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-
+import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import animationData from "../../animations/landinganimation/data";
 import Grid from "@material-ui/core/Grid";
-
 import Typography from "@material-ui/core/Typography";
-
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-
 import Card from "@material-ui/core/Card";
 import low from "../../assets/low.png";
 import safe from "../../assets/safe.png";
@@ -18,7 +13,6 @@ import anonymous from "../../assets/anonymous.png";
 import revolutionBackground from "../../assets/repeatingBackground.svg";
 import background from "../../assets/background.jpg";
 import Vouchaimg from "../../assets/Vouchaimg.png";
-
 import cardbg from "../../assets/cardsbg.png";
 import about1 from "../../assets/about1.png";
 import about2 from "../../assets/about2.png";
@@ -184,26 +178,7 @@ const WhyVoucha = (props) => {
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 	const matchesXL = useMediaQuery(theme.breakpoints.down("lg"));
-	//this enables the use of ternary to set conditions for screen
 
-	const [openState, setOpenState] = useState(false);
-	const [state, setState] = useState(1);
-	const Slide = require("./Slide").default;
-	const { red, blue, green } = require("@material-ui/core/colors");
-	const Button = require("@material-ui/core/Button").default;
-
-	const toggle = () => {
-		setOpenState((prevState) => ({ openState: !prevState.openState }));
-	};
-
-	const defaultOptions = {
-		loop: true,
-		autoplay: true,
-		animationData: animationData,
-		rendererSettings: {
-			preserveAspectRatio: "xMidYMid slice",
-		},
-	};
 	return (
 		<Grid
 			item
@@ -258,7 +233,7 @@ const WhyVoucha = (props) => {
 							style={{
 								maxWidth: "24em",
 								bottom: 0,
-								background: "rgb(0, 0, 0)",
+
 								background: "rgba(0, 0, 0, 0.1)",
 								color: "white",
 								width: "100%",
@@ -266,6 +241,7 @@ const WhyVoucha = (props) => {
 						>
 							<Grid item>
 								<img
+									alt="low sign"
 									src={low}
 									style={{ maxWidth: "24em", maxHeight: "20em" }}
 								/>
@@ -295,7 +271,6 @@ const WhyVoucha = (props) => {
 							style={{
 								maxWidth: "24em",
 								bottom: 0,
-								background: "rgb(0, 0, 0)",
 								background: "rgba(0, 0, 0, 0.1)",
 								color: "white",
 								width: "100%",
@@ -303,6 +278,7 @@ const WhyVoucha = (props) => {
 						>
 							<Grid item>
 								<img
+									alt="social impact"
 									src={socialimpact}
 									style={{ maxWidth: "24em", height: "4.2em" }}
 								/>
@@ -333,7 +309,7 @@ const WhyVoucha = (props) => {
 							style={{
 								maxWidth: "24em",
 								bottom: 0,
-								background: "rgb(0, 0, 0)",
+
 								background: "rgba(0, 0, 0, 0.1)",
 								color: "white",
 								width: "100%",
@@ -341,6 +317,7 @@ const WhyVoucha = (props) => {
 						>
 							<Grid item>
 								<img
+									alt="value based"
 									src={valuebased}
 									style={{ width: "24em", height: "4.2em" }}
 								/>
@@ -373,7 +350,7 @@ const WhyVoucha = (props) => {
 								maxWidth: "24em",
 
 								bottom: 0,
-								background: "rgb(0, 0, 0)",
+
 								background: "rgba(0, 0, 0, 0.1)",
 								color: "white",
 								width: "100%",
@@ -381,6 +358,7 @@ const WhyVoucha = (props) => {
 						>
 							<Grid item>
 								<img
+									alt="overhead"
 									src={overhead}
 									style={{ maxWidth: "24em", maxHeight: "20em" }}
 								/>
@@ -412,14 +390,18 @@ const WhyVoucha = (props) => {
 								maxWidth: "24em",
 
 								bottom: 0,
-								background: "rgb(0, 0, 0)",
+
 								background: "rgba(0, 0, 0, 0.1)",
 								color: "white",
 								width: "100%",
 							}}
 						>
 							<Grid item>
-								<img src={safe} style={{ maxWidth: "24em", height: "4.2em" }} />
+								<img
+									alt="safe"
+									src={safe}
+									style={{ maxWidth: "24em", height: "4.2em" }}
+								/>
 							</Grid>
 							<Grid>
 								<Grid align="center" style={{ padding: "1em" }}>
@@ -449,7 +431,7 @@ const WhyVoucha = (props) => {
 								maxWidth: "24em",
 
 								bottom: 0,
-								background: "rgb(0, 0, 0)",
+
 								background: "rgba(0, 0, 0, 0.1)",
 								color: "white",
 								width: "100%",
@@ -457,6 +439,7 @@ const WhyVoucha = (props) => {
 						>
 							<Grid item>
 								<img
+									alt="anonymous"
 									src={anonymous}
 									style={{ maxWidth: "24em", height: "4.2em" }}
 								/>

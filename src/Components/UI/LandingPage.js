@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ButtonArrow from "../../Components/UI/061 ButtonArrow";
@@ -217,7 +217,6 @@ const LandingPage = (props) => {
 					<Grid
 						item
 						sm
-						item
 						className={classes.heroTextContainer}
 						style={{
 							marginTop: matchesSM ? "1em" : "4em",
@@ -515,7 +514,7 @@ const LandingPage = (props) => {
 								style={{
 									maxWidth: "24em",
 									bottom: 0,
-									background: "rgb(0, 0, 0)",
+
 									background: "rgba(0, 0, 0, 0.1)",
 									color: "white",
 									width: "100%",
@@ -523,6 +522,7 @@ const LandingPage = (props) => {
 							>
 								<Grid item>
 									<img
+										alt="low sign 3"
 										src={low}
 										style={{ maxWidth: "24em", maxHeight: "20em" }}
 									/>
@@ -552,7 +552,7 @@ const LandingPage = (props) => {
 								style={{
 									maxWidth: "24em",
 									bottom: 0,
-									background: "rgb(0, 0, 0)",
+
 									background: "rgba(0, 0, 0, 0.1)",
 									color: "white",
 									width: "100%",
@@ -560,6 +560,7 @@ const LandingPage = (props) => {
 							>
 								<Grid item>
 									<img
+										alt="social impact"
 										src={socialimpact}
 										style={{ maxWidth: "24em", height: "4.2em" }}
 									/>
@@ -590,7 +591,7 @@ const LandingPage = (props) => {
 								style={{
 									maxWidth: "24em",
 									bottom: 0,
-									background: "rgb(0, 0, 0)",
+
 									background: "rgba(0, 0, 0, 0.1)",
 									color: "white",
 									width: "100%",
@@ -598,6 +599,7 @@ const LandingPage = (props) => {
 							>
 								<Grid item>
 									<img
+										alt="value based"
 										src={valuebased}
 										style={{ width: "24em", height: "4.2em" }}
 									/>
@@ -630,7 +632,7 @@ const LandingPage = (props) => {
 									maxWidth: "24em",
 
 									bottom: 0,
-									background: "rgb(0, 0, 0)",
+
 									background: "rgba(0, 0, 0, 0.1)",
 									color: "white",
 									width: "100%",
@@ -638,6 +640,7 @@ const LandingPage = (props) => {
 							>
 								<Grid item>
 									<img
+										alt="overhead 2"
 										src={overhead}
 										style={{ maxWidth: "24em", maxHeight: "20em" }}
 									/>
@@ -669,7 +672,7 @@ const LandingPage = (props) => {
 									maxWidth: "24em",
 
 									bottom: 0,
-									background: "rgb(0, 0, 0)",
+
 									background: "rgba(0, 0, 0, 0.1)",
 									color: "white",
 									width: "100%",
@@ -677,6 +680,7 @@ const LandingPage = (props) => {
 							>
 								<Grid item>
 									<img
+										alt="safe"
 										src={safe}
 										style={{ maxWidth: "24em", height: "4.2em" }}
 									/>
@@ -709,7 +713,7 @@ const LandingPage = (props) => {
 									maxWidth: "24em",
 
 									bottom: 0,
-									background: "rgb(0, 0, 0)",
+
 									background: "rgba(0, 0, 0, 0.1)",
 									color: "white",
 									width: "100%",
@@ -717,6 +721,7 @@ const LandingPage = (props) => {
 							>
 								<Grid item>
 									<img
+										alt="anonymous"
 										src={anonymous}
 										style={{ maxWidth: "24em", height: "4.2em" }}
 									/>
@@ -795,7 +800,6 @@ const LandingPage = (props) => {
 											onClick={() => props.setValue(6)}
 											variant="contained"
 											color="secondary"
-											component={Link}
 											style={{
 												backgroundColor: "blue",
 												borderRadius: "3em",
@@ -821,6 +825,7 @@ const LandingPage = (props) => {
 						}}
 					>
 						<img
+							alt="how it works 1"
 							src={Howitworksp1}
 							style={{
 								height: matchesXS ? "29em" : "35em",
@@ -1083,7 +1088,9 @@ const LandingPage = (props) => {
 							onChange={handleChange("panel1")}
 						>
 							<AccordionSummary
-								expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+								expandIcon={
+									<img alt="plus 3" src={plus} style={{ height: "0.7em" }} />
+								}
 								aria-controls="panel1a-content"
 								id="panel1a-header"
 							>
@@ -1103,7 +1110,13 @@ const LandingPage = (props) => {
 							onChange={handleChange("panel2")}
 						>
 							<AccordionSummary
-								expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+								expandIcon={
+									<img
+										alt="plus sign 2"
+										src={plus}
+										style={{ height: "0.7em" }}
+									/>
+								}
 								aria-controls="panel2a-content"
 								id="panel2a-header"
 							>
@@ -1123,7 +1136,13 @@ const LandingPage = (props) => {
 							onChange={handleChange("panel3")}
 						>
 							<AccordionSummary
-								expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+								expandIcon={
+									<img
+										alt="plus sign 2"
+										src={plus}
+										style={{ height: "0.7em" }}
+									/>
+								}
 								aria-controls="panel3a-content"
 								id="panel3a-header"
 							>
@@ -1144,7 +1163,13 @@ const LandingPage = (props) => {
 							onChange={handleChange("panel4")}
 						>
 							<AccordionSummary
-								expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+								expandIcon={
+									<img
+										alt="plus sign 2"
+										src={plus}
+										style={{ height: "0.7em" }}
+									/>
+								}
 								aria-controls="panel4a-content"
 								id="panel4a-header"
 							>
@@ -1165,7 +1190,13 @@ const LandingPage = (props) => {
 							onChange={handleChange("panel5")}
 						>
 							<AccordionSummary
-								expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+								expandIcon={
+									<img
+										alt="plus sign 2"
+										src={plus}
+										style={{ height: "0.7em" }}
+									/>
+								}
 								aria-controls="panel5a-content"
 								id="panel5a-header"
 							>
@@ -1185,7 +1216,13 @@ const LandingPage = (props) => {
 							onChange={handleChange("panel6")}
 						>
 							<AccordionSummary
-								expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+								expandIcon={
+									<img
+										alt="plus sign 2"
+										src={plus}
+										style={{ height: "0.7em" }}
+									/>
+								}
 								aria-controls="panel6a-content"
 								id="panel6a-header"
 							>
@@ -1206,7 +1243,13 @@ const LandingPage = (props) => {
 							onChange={handleChange("panel7")}
 						>
 							<AccordionSummary
-								expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+								expandIcon={
+									<img
+										alt="plus sign 2"
+										src={plus}
+										style={{ height: "0.7em" }}
+									/>
+								}
 								aria-controls="panel7a-content"
 								id="panel7a-header"
 							>

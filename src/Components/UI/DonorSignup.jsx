@@ -5,7 +5,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import DonorSignupForm from "../UI/DonorSignupForm";
 import mobileBackground from "../../assets/mobileBackground.jpg";
-import { Link, useHistory, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useAuth0 } from "@auth0/auth0-react";
 import hand from "../../assets/hands.png";
@@ -85,7 +85,6 @@ function DonorSignUp({ props }) {
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const { isAuthenticated } = useAuth0();
-	let history = useHistory();
 
 	useEffect(() => {
 		if (isAuthenticated) {
@@ -163,7 +162,7 @@ function DonorSignUp({ props }) {
 						<DonorSignupForm />
 					</Grid>
 					<Button variant="contained" component={Link} to="/donordashboard">
-						Sign Up
+						CLICK TO VIEW DASHBOARD ONLY WHEN AUTHENTICATED
 					</Button>
 				</Grid>
 			</Grid>

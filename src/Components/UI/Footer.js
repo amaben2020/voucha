@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Hidden from "@material-ui/core/Hidden";
-import mobile from "../../assets/mobileee.jpg";
+
 import playstore from "../../assets/playstore.png";
 import whatsapp from "../../assets/whatsapp.png";
 import appstore from "../../assets/appstore.png";
@@ -223,6 +223,7 @@ export default function Footer(props) {
 						>
 							<Grid>
 								<img
+									alt="imag of sociocap"
 									style={{ maxHeight: "4.2em", minWidth: "17em" }}
 									src={poweredby}
 								/>
@@ -235,7 +236,11 @@ export default function Footer(props) {
 
 							<Grid item container style={{ paddingTop: "2em" }}>
 								<Grid>
-									<img style={{ height: "3em", width: "3em" }} src={whatsapp} />
+									<img
+										alt="imag of whatsapp"
+										style={{ height: "3em", width: "3em" }}
+										src={whatsapp}
+									/>
 								</Grid>
 								<Grid>
 									<Typography style={{ color: "black", padding: "0.5em" }}>
@@ -245,7 +250,11 @@ export default function Footer(props) {
 							</Grid>
 							<Grid item container style={{ paddingTop: "2em" }}>
 								<Grid>
-									<img style={{ height: "3em", width: "3em" }} src={mail} />
+									<img
+										alt="imag of sociocapital"
+										style={{ height: "3em", width: "3em" }}
+										src={mail}
+									/>
 								</Grid>
 								<Grid>
 									<Typography style={{ color: "black", padding: "0.5em" }}>
@@ -255,7 +264,11 @@ export default function Footer(props) {
 							</Grid>
 							<Grid item container style={{ paddingTop: "2em" }}>
 								<Grid>
-									<img style={{ height: "3em", width: "3em" }} src={websitee} />
+									<img
+										alt="internet"
+										style={{ height: "3em", width: "3em" }}
+										src={websitee}
+									/>
 								</Grid>
 								<Grid>
 									<Typography style={{ color: "black", padding: "0.5em" }}>

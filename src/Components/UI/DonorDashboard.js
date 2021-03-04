@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link, NavLink } from "react-router-dom";
-import { Button, Card, CardHeader } from "@material-ui/core";
+import { Button, Card } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import mobileBackground from "../../assets/mobileBackground.jpg";
 import { useMediaQuery } from "@material-ui/core";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
 import moment from "moment";
 import upload from "../../assets/naira.png";
 
@@ -82,10 +80,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function DonorDashboard(props) {
+export default function DonorDashboard() {
 	const classes = useStyles();
 	const theme = useTheme();
-	const [open, setOpen] = useState(false);
 	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
@@ -330,8 +327,9 @@ export default function DonorDashboard(props) {
 											}}
 										>
 											<img
+												alt="showing upload"
 												src={upload}
-												style={{ maxHeight: 30, maxHeight: 30 }}
+												style={{ maxHeight: 30 }}
 											/>
 										</Grid>
 									</Grid>

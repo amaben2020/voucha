@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../Components/UI/Header";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./UI/Theme";
@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Footer from "./UI/Footer";
 import LandingPage from "./UI/LandingPage";
 
-import Wallet from "./UI/Wallet";
+// import Wallet from "./UI/Wallet";
 import About from "../Components/UI/About";
 import HowItWorks from "./UI/HowItWorks";
 import VendorSignUp from "../Components/UI/VendorSignUp";
@@ -21,35 +21,32 @@ import SignUp from "../Components/UI/SignUp";
 import WhyVoucha from "../Components/UI/WhyVoucha";
 import DonorDashboard from "../Components/UI/DonorDashboard";
 import DonorSignUp from "../Components/UI/DonorSignup";
-import GenerateVoucher from "./UI/GenerateVoucher";
-import FundWallet from "./UI/FundWallet";
-import GenerateVouchers from "./UI/GenerateVouchers";
-import GenerateVouchers2 from "./UI/GenerateVouchers2";
-import DistributeVouchers from "./UI/DistributeVouchers";
-import DistributeVouchers2 from "./UI/DistributeVouchers2";
-import SpecificDemography from "./UI/SpecificDemography";
-import SpecificDemography2 from "./UI/SpecificDemography2";
-import Profile from "./UI/Profile";
+// import GenerateVoucher from "./UI/GenerateVoucher";
+// import FundWallet from "./UI/FundWallet";
+// import GenerateVouchers from "./UI/GenerateVouchers";
+// import GenerateVouchers2 from "./UI/GenerateVouchers2";
+// import DistributeVouchers from "./UI/DistributeVouchers";
+// import DistributeVouchers2 from "./UI/DistributeVouchers2";
+// import SpecificDemography from "./UI/SpecificDemography";
+// import SpecificDemography2 from "./UI/SpecificDemography2";
+// import Profile from "./UI/Profile";
 // import VendorProfile from "./UI/VendorProfile";
-import VendorWallet from "./UI/VendorWallet";
-import DonorWithdrawingFromWallet from "./UI/DonorWithdrawingFromWallet";
+// import VendorWallet from "./UI/VendorWallet";
+// import DonorWithdrawingFromWallet from "./UI/DonorWithdrawingFromWallet";
 // import DonorFundWallet from "./UI/DonorFundWallet";
-import VendorWithdrawingFromWallet from "./UI/VendorWithdrawingFromWallet";
+// import VendorWithdrawingFromWallet from "./UI/VendorWithdrawingFromWallet";
 // import VendorRedeemVoucher from "./UI/VendorRedeemVoucher";
 import MainSignup from "./UI/MainSignup";
 import SignInDonorVendor from "./UI/SignInDonorVendor";
 import DonorSignin from "./UI/DonorSignin";
 import VendorSignin from "./UI/VendorSignin";
-import { auth, createUserProfileDocument } from "../firebase/firebase.utils";
-import { setCurrentUser } from "../redux/User/User.actions";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
+import PrivateRoute from "./UI/PrivateRoute";
 // function App({ setCurrentUser, currentUser }) {
 function App() {
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const [value, setValue] = useState(0);
-	const { isAuthenticated } = useAuth0();
+	// const { isAuthenticated } = useAuth0();
 	return (
 		<ThemeProvider theme={theme}>
 			{" "}
@@ -102,7 +99,7 @@ function App() {
 								)
 							}
 						/> */}
-					<Route
+					<PrivateRoute
 						exact
 						path="/donordashboard"
 						render={(props) => (
@@ -124,7 +121,7 @@ function App() {
 							/>
 						)}
 					/>
-					<Route
+					{/* <Route
 						exact
 						path="/wallet"
 						render={(props) => (
@@ -134,8 +131,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>{" "}
-					<Route
+					/>{" "} */}
+					{/* <Route
 						exact
 						path="/profile"
 						render={(props) => (
@@ -145,8 +142,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
-					<Route
+					/> */}
+					{/* <Route
 						exact
 						path="/fundwallet"
 						render={(props) => (
@@ -156,7 +153,7 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
+					/> */}
 					{/* <Route
 						exact
 						path="/donorfundwallet"
@@ -168,7 +165,7 @@ function App() {
 							/>
 						)}
 					/> */}
-					<Route
+					{/* <Route
 						exact
 						path="/generatevoucher"
 						render={(props) => (
@@ -178,8 +175,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
-					<Route
+					/> */}
+					{/* <Route
 						exact
 						path="/vendorwallet"
 						render={(props) => (
@@ -189,8 +186,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
-					<Route
+					/> */}
+					{/* <Route
 						exact
 						path="/generatevouchers"
 						render={(props) => (
@@ -200,8 +197,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>{" "}
-					<Route
+					/>{" "} */}
+					{/* <Route
 						exact
 						path="/generatevouchers2"
 						render={(props) => (
@@ -211,8 +208,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
-					<Route
+					/> */}
+					{/* <Route
 						exact
 						path="/distributevouchers"
 						render={(props) => (
@@ -222,7 +219,7 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>{" "}
+					/>{" "} */}
 					{/* <Route
 						exact
 						path="/vendorprofile"
@@ -234,7 +231,7 @@ function App() {
 							/>
 						)}
 					/> */}
-					<Route
+					{/* <Route
 						exact
 						path="/distributevouchers2"
 						render={(props) => (
@@ -244,8 +241,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>{" "}
-					<Route
+					/>{" "} */}
+					{/* <Route
 						exact
 						path="/specificdemography"
 						render={(props) => (
@@ -255,7 +252,7 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>{" "}
+					/>{" "} */}
 					{/* <Route
 						exact
 						path="/vendorredeemvoucher"
@@ -303,7 +300,7 @@ function App() {
 							/>
 						)}
 					/>
-					<Route
+					{/* <Route
 						exact
 						path="/specificdemography2"
 						render={(props) => (
@@ -313,7 +310,7 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
+					/> */}
 					<Route
 						exact
 						path="/vendorsignup"
@@ -424,7 +421,7 @@ function App() {
 							/>
 						)}
 					/>{" "}
-					<Route
+					{/* <Route
 						exact
 						path="/vendorwithdrawingfromwallet"
 						render={(props) => (
@@ -434,8 +431,8 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
-					<Route
+					/> */}
+					{/* <Route
 						exact
 						path="/donorwithdrawingfromwallet"
 						render={(props) => (
@@ -445,7 +442,7 @@ function App() {
 								setSelectedIndex={setSelectedIndex}
 							/>
 						)}
-					/>
+					/> */}
 					<Route
 						exact
 						path="/howitworks3"
@@ -512,12 +509,5 @@ function App() {
 		</ThemeProvider>
 	);
 }
-const mapStateToProps = ({ user }) => ({
-	currentUser: user.currentUser,
-});
 
-const mapDispatchToProps = (dispatch) => ({
-	setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

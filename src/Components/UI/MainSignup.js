@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 import Hidden from "@material-ui/core/Hidden";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import MainSignupForm from "../UI/MainSignupForm";
@@ -57,7 +56,7 @@ export default function CallToAction(props) {
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-	const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -72,7 +71,11 @@ export default function CallToAction(props) {
 				<Grid container direction="column">
 					<Hidden mdDown>
 						<Grid item>
-							<img src={hand} style={{ maxHeight: "25em" }} />
+							<img
+								alt="hand of person"
+								src={hand}
+								style={{ maxHeight: "25em" }}
+							/>
 						</Grid>{" "}
 					</Hidden>
 				</Grid>

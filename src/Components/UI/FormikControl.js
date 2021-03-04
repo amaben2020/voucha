@@ -18,11 +18,9 @@ function FormikControl(props) {
 			return <RadioButtons {...rest} />;
 		case "checkbox":
 			return <CheckboxGroup {...rest} />;
-
 		default:
 			return null;
 	}
-	return <div></div>;
 }
 
 export default FormikControl;

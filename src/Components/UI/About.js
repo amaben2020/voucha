@@ -63,14 +63,7 @@ const useStyles = makeStyles((theme) => ({
 		height: "100%",
 		width: "100%",
 	},
-	about2: {
-		backgroundImage: `url(${about2})`,
-		backgroundPosition: "center",
-		backgroundSize: "cover",
-		backgroundRepeat: "no-repeat",
-		height: "100%",
-		width: "100%",
-	},
+
 	rowContainer: {
 		paddingLeft: "5em",
 		paddingRight: "5em",

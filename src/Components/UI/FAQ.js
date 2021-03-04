@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -170,21 +170,11 @@ const useStyles = makeStyles((theme) => ({
 const FAQ = (props) => {
 	const classes = useStyles();
 	const theme = useTheme();
-	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-	const matchesXL = useMediaQuery(theme.breakpoints.down("lg"));
+
 	//this enables the use of ternary to set conditions for screen
-
-	const [openState, setOpenState] = useState(false);
-	const [state, setState] = useState(1);
-	const Slide = require("./Slide").default;
-	const { red, blue, green } = require("@material-ui/core/colors");
-	const Button = require("@material-ui/core/Button").default;
-
-	const toggle = () => {
-		setOpenState((prevState) => ({ openState: !prevState.openState }));
-	};
 
 	const [expanded, setExpanded] = React.useState(false);
 	const handleChange = (panel) => (event, isExpanded) => {
@@ -219,7 +209,9 @@ const FAQ = (props) => {
 						onChange={handleChange("panel1")}
 					>
 						<AccordionSummary
-							expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+							expandIcon={
+								<img alt="plus sign" src={plus} style={{ height: "0.7em" }} />
+							}
 							aria-controls="panel1a-content"
 							id="panel1a-header"
 						>
@@ -239,7 +231,9 @@ const FAQ = (props) => {
 						onChange={handleChange("panel2")}
 					>
 						<AccordionSummary
-							expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+							expandIcon={
+								<img alt="plus sign2" src={plus} style={{ height: "0.7em" }} />
+							}
 							aria-controls="panel2a-content"
 							id="panel2a-header"
 						>
@@ -259,7 +253,9 @@ const FAQ = (props) => {
 						onChange={handleChange("panel3")}
 					>
 						<AccordionSummary
-							expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+							expandIcon={
+								<img alt="plus sign 3" src={plus} style={{ height: "0.7em" }} />
+							}
 							aria-controls="panel3a-content"
 							id="panel3a-header"
 						>
@@ -280,7 +276,9 @@ const FAQ = (props) => {
 						onChange={handleChange("panel4")}
 					>
 						<AccordionSummary
-							expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+							expandIcon={
+								<img alt="plus sign 4" src={plus} style={{ height: "0.7em" }} />
+							}
 							aria-controls="panel4a-content"
 							id="panel4a-header"
 						>
@@ -300,7 +298,9 @@ const FAQ = (props) => {
 						onChange={handleChange("panel5")}
 					>
 						<AccordionSummary
-							expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+							expandIcon={
+								<img alt="plus sign 4" src={plus} style={{ height: "0.7em" }} />
+							}
 							aria-controls="panel5a-content"
 							id="panel5a-header"
 						>
@@ -320,7 +320,9 @@ const FAQ = (props) => {
 						onChange={handleChange("panel6")}
 					>
 						<AccordionSummary
-							expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+							expandIcon={
+								<img alt="plus sign 5" src={plus} style={{ height: "0.7em" }} />
+							}
 							aria-controls="panel6a-content"
 							id="panel6a-header"
 						>
@@ -341,7 +343,9 @@ const FAQ = (props) => {
 						onChange={handleChange("panel7")}
 					>
 						<AccordionSummary
-							expandIcon={<img src={plus} style={{ height: "0.7em" }} />}
+							expandIcon={
+								<img alt="plus sign 7" src={plus} style={{ height: "0.7em" }} />
+							}
 							aria-controls="panel7a-content"
 							id="panel7a-header"
 						>

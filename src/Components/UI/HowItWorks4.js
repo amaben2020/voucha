@@ -132,11 +132,9 @@ export default function HowItWorks4(props) {
 														Simply{" "}
 														<Button
 															component={Link}
-															to="/estimate"
 															onClick={() => props.setValue(6)}
 															variant="contained"
 															color="secondary"
-															component={Link}
 															to="/signup"
 															style={{ backgroundColor: "blue" }}
 														>
@@ -297,6 +295,7 @@ export default function HowItWorks4(props) {
 							}}
 						>
 							<img
+								alt="mobile phone"
 								src={mobile}
 								style={{
 									height: matchesXS ? "17em" : "35em",

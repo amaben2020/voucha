@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import VendorSignUp from "../../assets/vendorSignup.png";
-import { Link } from "react-router-dom";
+
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import yellow_flower1 from "../../assets/yellow_flower1.PNG";
 import yellow_flower2 from "../../assets/yellow_flower2.PNG";
@@ -92,10 +92,12 @@ export default function UserSignIn({ props, setName }) {
 				}}
 			>
 				<img
+					alt="yellow flower"
 					src={yellow_flower1}
 					style={{ maxWidth: matchesXS ? "5em" : "15em", marginLeft: "2em" }}
 				/>
 				<img
+					alt="second yellow flower"
 					src={yellow_flower2}
 					style={{ maxWidth: matchesXS ? "5em" : "15em", marginLeft: "2em" }}
 				/>

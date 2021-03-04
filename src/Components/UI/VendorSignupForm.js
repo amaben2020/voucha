@@ -4,9 +4,9 @@ import { Form, Formik } from "formik";
 // import * as yup from "yup";
 import Button from "@material-ui/core/Button";
 function VendorSignupForm() {
-	function myFunction() {
-		document.getElementById("form-control").style.overflow = "scroll";
-	}
+	// function myFunction() {
+	// 	document.getElementById("form-control").style.overflow = "scroll";
+	// }
 	const organizationOptions = [
 		{ key: "Select your organisation category", value: "" },
 		{ key: "Aviation", value: "react" },
@@ -14,12 +14,12 @@ function VendorSignupForm() {
 		{ key: "Philanthropy", value: "vue" },
 	];
 
-	const dropDownOptions = [
-		{ key: "Select your organisation category", value: "" },
-		{ key: "Aviation", value: "react" },
-		{ key: "Banking", value: "angular" },
-		{ key: "Philanthropy", value: "vue" },
-	];
+	// const dropDownOptions = [
+	// 	{ key: "Select your organisation category", value: "" },
+	// 	{ key: "Aviation", value: "react" },
+	// 	{ key: "Banking", value: "angular" },
+	// 	{ key: "Philanthropy", value: "vue" },
+	// ];
 
 	const countryOptions = [
 		{ key: "Choose your country", value: "" },

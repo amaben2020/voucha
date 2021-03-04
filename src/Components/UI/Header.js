@@ -1,11 +1,11 @@
-import React, { useState, useEffect, Fragment, useContext } from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles } from "@material-ui/styles";
 import logo from "../../assets/voucha_logo.svg";
 import Button from "@material-ui/core/Button";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -17,17 +17,12 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { auth } from "./../../firebase/firebase.utils";
 import { Grid, Typography } from "@material-ui/core";
-import { connect } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
-import JSONpretty from "react-json-pretty";
+
 //This is the elevation scroll function
 function ElevationScroll(props) {
 	const { children } = props;
-	const { currentUser } = props;
-	const { name } = props;
-
 	const trigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,
@@ -134,28 +129,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const optionss = [
-	"None",
-	"Atria",
-	"Callisto",
-	"Dione",
-	"Ganymede",
-	"Hangouts Call",
-	"Luna",
-	"Oberon",
-	"Phobos",
-	"Pyxis",
-	"Sedna",
-	"Titania",
-	"Triton",
-	"Umbriel",
-];
-
-///////////////////
-const mapStateToProps = (state) => ({
-	currentUser: state.user.currentUser,
-});
-
 //we then use the elevationScroll function in MaterialUI
 function Header(props) {
 	const { logout, isAuthenticated, user } = useAuth0();
@@ -176,9 +149,6 @@ function Header(props) {
 	const [openMenu, setOpenMenu] = useState(false);
 
 	const [openDrawer, setOpenDrawer] = useState(false);
-	const handleChange = (e, newValue) => {
-		props.setValue(newValue);
-	};
 
 	const handleClick = (e) => {
 		setAnchorEl(e.currentTarget);
@@ -234,33 +204,6 @@ function Header(props) {
 		{ name: "Help Desk", link: "/blog", activeIndex: 5 },
 	];
 
-	//if the pathname equals a link and the value is not that link, set the value to that link
-
-	{
-		/** useEffect(() => {
-		[...menuOptions, ...routes].forEach((route) => {
-			switch (window.location.pathname) {
-				case `${route.link}`:
-					if (props.value !== route.activeIndex) {
-						props.setValue(route.activeIndex);
-						if (
-							route.selectedIndex &&
-							route.selectedIndex !== props.selectedIndex
-						) {
-							props.setSelectedIndex(route.selectedIndex);
-						}
-					}
-					break;
-				case "/estimate":
-					props.setValue(6);
-					break;
-				default:
-					break;
-			}
-		});
-	}, [props.value, menuOptions, props.selectedIndex, routes, props]); */
-	}
-
 	const tabs = (
 		<React.Fragment>
 			<IconButton
@@ -294,27 +237,6 @@ function Header(props) {
 				))}
 			</Menu>
 
-			{/****   	<Tabs
-				value={props.value}
-				indicatorColor="primary"
-				onChange={handleChange}
-				className={classes.tabContainer}
-			>
-				{routes.map((route, index) => (
-					<Tab
-						key={`${route}${index}`}
-						className={classes.tab}
-						component={Link}
-						to={route.link}
-						label={route.name}
-						aria-owns={route.ariaOwns}
-						aria-haspopup={route.ariaPopup}
-						onMouseOver={route.mouseOver}
-					/>
-				))}
-			</Tabs>    */}
-
-			{/***   */}
 			<Menu
 				id="simple-menu"
 				anchorEl={anchorEl}
@@ -477,7 +399,6 @@ function Header(props) {
 							onClick={() => props.setValue(6)}
 							variant="contained"
 							color="secondary"
-							component={Link}
 							className={classes.button}
 						>
 							SIGN IN
@@ -489,7 +410,6 @@ function Header(props) {
 								onClick={() => props.setValue(6)}
 								variant="contained"
 								color="secondary"
-								component={Link}
 								style={{ backgroundColor: "#2E2E5F" }}
 								className={classes.button}
 							>
@@ -513,7 +433,6 @@ function Header(props) {
 										onClick={() => logout()}
 										variant="contained"
 										color="secondary"
-										component={Link}
 										style={{ backgroundColor: "#2E2E5F" }}
 										className={classes.button}
 									>
@@ -530,4 +449,4 @@ function Header(props) {
 	);
 }
 
-export default connect(mapStateToProps)(Header);
+export default Header;
