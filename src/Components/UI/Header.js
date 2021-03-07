@@ -19,7 +19,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Grid, Typography } from "@material-ui/core";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import JSONpretty from "react-json-pretty";
+import StarIcon from "@material-ui/icons/Star";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
 //This is the elevation scroll function
 function ElevationScroll(props) {
 	const { children } = props;
@@ -393,7 +395,7 @@ function Header(props) {
 							/>
 						</Button>
 						<Button
-							style={{ marginLeft: "55em", marginTop: "15px" }}
+							style={{ marginLeft: "55em", marginTop: "8px" }}
 							component={Link}
 							to="/signindonorvendor"
 							onClick={() => props.setValue(6)}
@@ -418,22 +420,39 @@ function Header(props) {
 						) : null}
 						{/** FOR AUTH */}
 						{isAuthenticated ? (
-							<Grid style={{ marginLeft: "-30px" }}>
+							<Grid style={{ marginLeft: "-30px", display: "flex" }}>
 								<Grid>
-									<Typography
-										style={{ fontSize: "14px", fontStyle: "italics" }}
-									>
-										{/**<JSONpretty data={user} /> */}
-										Welcome, {user.name}{" "}
-									</Typography>
+									<Grid style={{ marginLeft: "20px" }}>
+										{" "}
+										<img
+											style={{
+												borderRadius: "20px",
+												height: "40px",
+												width: "60px",
+												marginTop: "5px",
+											}}
+											src={user.picture}
+											alt="image per"
+										/>
+										<Typography
+											style={{ fontSize: "10px", fontStyle: "italics" }}
+										>
+											{/**<JSONpretty data={user} /> */}
+											<span style={{ fontSize: "12px", color: "#2E2E5F" }}>
+												{" "}
+												Welcome{" "}
+											</span>
+											, {user.name}{" "}
+										</Typography>
+									</Grid>
 								</Grid>
-								<Grid>
+								<Grid style={{ marginRight: "20px", marginTop: "28px" }}>
 									<Button
 										component={Link}
 										onClick={() => logout()}
 										variant="contained"
 										color="secondary"
-										style={{ backgroundColor: "#2E2E5F" }}
+										style={{ backgroundColor: "#2E2E5F", width: "100px" }}
 										className={classes.button}
 									>
 										SIGN OUT

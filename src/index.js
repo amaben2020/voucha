@@ -6,8 +6,8 @@ import { store } from "./redux/User/store/store";
 import { Auth0Provider } from "@auth0/auth0-react";
 ReactDOM.render(
 	<Auth0Provider
-		domain="dev-n34rdis4.us.auth0.com"
-		clientId="uW2cOWbWgM6mFLgIEFkEm6Z0VOYPUeXy"
+		domain="dev-yt09r8-f.us.auth0.com"
+		clientId="Lg8czs3VU1MXqwzDxpOdTN6kaE6uTyYT"
 		redirectUri={window.location.origin}
 	>
 		<Provider store={store}>

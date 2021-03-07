@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-
 import { useTheme } from "@material-ui/core/styles";
 import FormInput from "./../FormControl/FormControl";
-
 import { useAuth0 } from "@auth0/auth0-react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 export const EnrollmentForm = ({ props, setNamee }) => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const { loginWithRedirect } = useAuth0();

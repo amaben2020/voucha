@@ -1,9 +1,7 @@
 import React from "react";
 import FormikControl from "./FormikControl";
 import { Form, Formik } from "formik";
-
 import { Button } from "@material-ui/core";
-
 function MainSignupForm() {
 	const initialValues = {
 		email: "",
@@ -11,7 +9,6 @@ function MainSignupForm() {
 		TermsOfService: [],
 		courseDate: null,
 	};
-
 	const onSubmit = async (values) => {
 		console.log("FORM DATA", values);
 	};
