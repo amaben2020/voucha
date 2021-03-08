@@ -8,6 +8,7 @@ import VendorSignUp2 from "../../assets/vendorSignup2.png";
 import { Link } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import VenorSignupForm from "../UI/VendorSignupForm";
+import { useAuth0 } from "@auth0/auth0-react";
 import "./App.module.css";
 
 const useStyles = makeStyles((theme) => ({

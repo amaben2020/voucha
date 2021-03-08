@@ -92,6 +92,7 @@ function DonorSigninForm({ props, setName }) {
 							<Button
 								type="submit"
 								onClick={() => loginWithRedirect()}
+								// onClick={() => props.history.push("/donordashboard")}
 								style={{
 									marginTop: "2em",
 									marginLeft: matchesXS ? "5em" : "8em",

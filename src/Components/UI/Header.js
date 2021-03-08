@@ -435,10 +435,10 @@ function Header(props) {
 											alt="image per"
 										/>
 										<Typography
-											style={{ fontSize: "10px", fontStyle: "italics" }}
+											style={{ fontSize: "8px", fontStyle: "italics" }}
 										>
 											{/**<JSONpretty data={user} /> */}
-											<span style={{ fontSize: "12px", color: "#2E2E5F" }}>
+											<span style={{ fontSize: "10px", color: "#2E2E5F" }}>
 												{" "}
 												Welcome{" "}
 											</span>

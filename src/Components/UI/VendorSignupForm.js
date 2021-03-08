@@ -3,10 +3,12 @@ import FormikControl from "./FormikControl";
 import { Form, Formik } from "formik";
 // import * as yup from "yup";
 import Button from "@material-ui/core/Button";
+import { useAuth0 } from "@auth0/auth0-react";
 function VendorSignupForm() {
 	// function myFunction() {
 	// 	document.getElementById("form-control").style.overflow = "scroll";
 	// }
+	const { loginWithRedirect } = useAuth0();
 	const organizationOptions = [
 		{ key: "Select your organisation category", value: "" },
 		{ key: "Aviation", value: "react" },
@@ -634,6 +636,7 @@ function VendorSignupForm() {
 									padding: "0.7em",
 								}}
 								type="submit"
+								onClick={() => loginWithRedirect()}
 								disabled={!formik.isValid}
 							>
 								Submit

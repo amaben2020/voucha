@@ -4,8 +4,10 @@ import { Form, Formik } from "formik";
 import { Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useAuth0 } from "@auth0/auth0-react";
 // import * as yup from "yup";
 function VendorSigninForm() {
+	const { loginWithRedirect } = useAuth0();
 	const initialValues = {
 		email: "",
 		password: "",
@@ -45,7 +47,7 @@ function VendorSigninForm() {
 							/>
 
 							<FormikControl
-								control="chakrainput"
+								control="input"
 								type="password"
 								label="Password"
 								name="password"
@@ -57,6 +59,7 @@ function VendorSigninForm() {
 
 							<Button
 								type="submit"
+								onClick={() => loginWithRedirect()}
 								style={{
 									marginTop: "2em",
 									background: "#8f076c",

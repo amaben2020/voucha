@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../Components/UI/Header";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./UI/Theme";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Footer from "./UI/Footer";
 import LandingPage from "./UI/LandingPage";
 
@@ -40,13 +40,13 @@ import MainSignup from "./UI/MainSignup";
 import SignInDonorVendor from "./UI/SignInDonorVendor";
 import DonorSignin from "./UI/DonorSignin";
 import VendorSignin from "./UI/VendorSignin";
-// import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import PrivateRoute from "./UI/PrivateRoute";
 // function App({ setCurrentUser, currentUser }) {
 function App() {
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const [value, setValue] = useState(0);
-	// const { isAuthenticated } = useAuth0();
+	const { isAuthenticated } = useAuth0();
 	return (
 		<ThemeProvider theme={theme}>
 			{" "}
@@ -267,13 +267,17 @@ function App() {
 					<Route
 						exact
 						path="/donorsignin"
-						render={(props) => (
-							<DonorSignin
-								{...props}
-								setValue={setValue}
-								setSelectedIndex={setSelectedIndex}
-							/>
-						)}
+						render={(props) =>
+							isAuthenticated ? (
+								<Redirect to="/" />
+							) : (
+								<DonorSignin
+									{...props}
+									setValue={setValue}
+									setSelectedIndex={setSelectedIndex}
+								/>
+							)
+						}
 					/>
 					{/* <Route
 							exact
@@ -292,13 +296,17 @@ function App() {
 					<Route
 						exact
 						path="/vendorsignin"
-						render={(props) => (
-							<VendorSignin
-								{...props}
-								setValue={setValue}
-								setSelectedIndex={setSelectedIndex}
-							/>
-						)}
+						render={(props) =>
+							isAuthenticated ? (
+								<Redirect to="/" />
+							) : (
+								<VendorSignin
+									{...props}
+									setValue={setValue}
+									setSelectedIndex={setSelectedIndex}
+								/>
+							)
+						}
 					/>
 					{/* <Route
 						exact
