@@ -438,7 +438,6 @@ function Header(props) {
 											style={{
 												fontSize: "10px",
 												fontStyle: "italics",
-												fontWeight: 700,
 											}}
 										>
 											{/**<JSONpretty data={user} /> */}
