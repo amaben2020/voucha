@@ -438,7 +438,7 @@ function Header(props) {
 										/>
 										<Typography
 											style={{
-												fontSize: "8px",
+												fontSize: "10px",
 												fontStyle: "italics",
 												fontWeight: 700,
 											}}
