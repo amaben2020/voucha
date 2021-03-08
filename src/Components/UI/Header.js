@@ -420,9 +420,7 @@ function Header(props) {
 						) : null}
 						{/** FOR AUTH */}
 						{isAuthenticated ? (
-							<Grid
-								style={{ marginLeft: "-30px", display: "flex", width: "190px" }}
-							>
+							<Grid style={{ marginLeft: "-30px", display: "flex" }}>
 								<Grid>
 									<Grid style={{ marginLeft: "20px" }}>
 										{" "}
