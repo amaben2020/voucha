@@ -224,7 +224,7 @@ export default function DonorDashboard() {
 									borderRadius: "2em",
 									minHeight: matchesSM ? "10em" : matchesMD ? "18em" : "33em",
 									marginBottom: matchesSM ? "1.9em" : undefined,
-									minWidth: matchesXS ? "10.9em" : matchesSM ? "29em" : "35em",
+									minWidth: matchesXS ? "10.9em" : matchesSM ? "29em" : "30em",
 									marginLeft: matchesSM ? "7.0em" : "1em",
 									bottom: 0,
 									backgroundColor: "white-smoke",
