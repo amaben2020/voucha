@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormikControl from "./FormikControl";
 import { Form, Formik } from "formik";
 import { Button } from "@material-ui/core";
-
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 
 import { useAuth0 } from "@auth0/auth0-react";
-function DonorSigninForm({ props, setName }) {
+function DonorSigninForm({ props, setName, history }) {
 	const theme = useTheme();
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
@@ -19,12 +18,18 @@ function DonorSigninForm({ props, setName }) {
 	};
 	const [username, setUsername] = useState(initialState);
 
-	const { loginWithRedirect } = useAuth0();
+	const { loginWithRedirect, isAuthenticated } = useAuth0();
 
 	const handleChangePassword = (e) => {
 		const password = e.target.value;
 		setPassword(password);
 	};
+
+	// useEffect(() => {
+	// 	if (isAuthenticated) {
+	// 		props.history.push("/donordashboard");
+	// 	}
+	// }, [isAuthenticated]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

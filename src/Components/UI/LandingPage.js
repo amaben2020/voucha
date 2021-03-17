@@ -29,7 +29,7 @@ import overhead from "../../assets/lowoverhead.png";
 import anonymous from "../../assets/anonymous.png";
 import accordion11 from "../../assets/accordion.png";
 import plus from "../../assets/plus.png";
-
+import { useAuth0 } from "@auth0/auth0-react";
 const useStyles = makeStyles((theme) => ({
 	estimateButton: {
 		...theme.typography.estimate,
@@ -193,6 +193,12 @@ const LandingPage = (props) => {
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
 	};
+
+	const { loginWithRedirect, isAuthenticated } = useAuth0();
+
+	if (isAuthenticated) {
+		props.history.push("/donordashboard");
+	}
 
 	return (
 		<Grid
