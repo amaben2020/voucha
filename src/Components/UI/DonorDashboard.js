@@ -123,7 +123,7 @@ export default function DonorDashboard() {
 						container
 						direction={matchesXS ? "row" : matchesMD ? "row" : "column"}
 						style={{
-							padding: matchesMD ? "3em" : undefined,
+							padding: matchesMD ? "1em" : undefined,
 						}}
 					>
 						<Grid item>
@@ -131,7 +131,7 @@ export default function DonorDashboard() {
 								style={{
 									paddingTop: "3em",
 									color: "#fff",
-									marginLeft: "1em",
+									marginLeft: "0.2em",
 								}}
 								variant="h5"
 							>
