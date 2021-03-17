@@ -129,7 +129,7 @@ export default function DonorDashboard() {
 						<Grid item>
 							<Typography
 								style={{
-									paddingTop: "0.5em",
+									paddingTop: "3em",
 									color: "#fff",
 									marginLeft: "1em",
 								}}
