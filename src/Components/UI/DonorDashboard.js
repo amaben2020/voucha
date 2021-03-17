@@ -131,7 +131,7 @@ export default function DonorDashboard() {
 								style={{
 									paddingTop: "3em",
 									color: "#fff",
-									marginLeft: "-10em",
+									marginLeft: "0.2em",
 								}}
 								variant="h5"
 							>
@@ -207,7 +207,7 @@ export default function DonorDashboard() {
 								: matchesSM
 								? 0
 								: matchesMD
-								? "15em"
+								? "1em"
 								: undefined,
 							marginTop: matchesXS
 								? "-18em"
