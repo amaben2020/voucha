@@ -512,15 +512,14 @@ const LandingPage = (props) => {
 						<Grid
 							item
 							style={{
-								marginLeft: matchesMD ? "1em" : "7em",
+								marginLeft: matchesMD ? "0.4em" : "7em",
 								marginTop: "1em",
 							}}
 						>
 							<Card
 								style={{
-									maxWidth: "24em",
+									maxWidth: "20em",
 									bottom: 0,
-
 									background: "rgba(0, 0, 0, 0.1)",
 									color: "white",
 									width: "100%",
@@ -530,7 +529,7 @@ const LandingPage = (props) => {
 									<img
 										alt="low sign 3"
 										src={low}
-										style={{ maxWidth: "24em", maxHeight: "20em" }}
+										style={{ maxWidth: "20em", maxHeight: "20em" }}
 									/>
 								</Grid>
 								<Grid>
@@ -556,7 +555,7 @@ const LandingPage = (props) => {
 						>
 							<Card
 								style={{
-									maxWidth: "24em",
+									maxWidth: "20em",
 									bottom: 0,
 
 									background: "rgba(0, 0, 0, 0.1)",
@@ -568,7 +567,7 @@ const LandingPage = (props) => {
 									<img
 										alt="social impact"
 										src={socialimpact}
-										style={{ maxWidth: "24em", height: "4.2em" }}
+										style={{ maxWidth: "20em", height: "4.9em" }}
 									/>
 								</Grid>
 								<Grid>
@@ -595,7 +594,7 @@ const LandingPage = (props) => {
 						>
 							<Card
 								style={{
-									maxWidth: "24em",
+									maxWidth: "20em",
 									bottom: 0,
 
 									background: "rgba(0, 0, 0, 0.1)",
@@ -607,7 +606,7 @@ const LandingPage = (props) => {
 									<img
 										alt="value based"
 										src={valuebased}
-										style={{ width: "24em", height: "4.2em" }}
+										style={{ width: "20em", height: "3em" }}
 									/>
 								</Grid>
 								<Grid>
@@ -635,7 +634,7 @@ const LandingPage = (props) => {
 						>
 							<Card
 								style={{
-									maxWidth: "24em",
+									maxWidth: "20em",
 
 									bottom: 0,
 
@@ -648,7 +647,7 @@ const LandingPage = (props) => {
 									<img
 										alt="overhead 2"
 										src={overhead}
-										style={{ maxWidth: "24em", maxHeight: "20em" }}
+										style={{ maxWidth: "20em", maxHeight: "20em" }}
 									/>
 								</Grid>
 								<Grid>
@@ -675,7 +674,7 @@ const LandingPage = (props) => {
 						>
 							<Card
 								style={{
-									maxWidth: "24em",
+									maxWidth: "20em",
 
 									bottom: 0,
 
@@ -688,7 +687,7 @@ const LandingPage = (props) => {
 									<img
 										alt="safe"
 										src={safe}
-										style={{ maxWidth: "24em", height: "4.2em" }}
+										style={{ maxWidth: "20em", height: "4.2em" }}
 									/>
 								</Grid>
 								<Grid>
@@ -716,7 +715,7 @@ const LandingPage = (props) => {
 						>
 							<Card
 								style={{
-									maxWidth: "24em",
+									maxWidth: "20em",
 
 									bottom: 0,
 
@@ -729,7 +728,7 @@ const LandingPage = (props) => {
 									<img
 										alt="anonymous"
 										src={anonymous}
-										style={{ maxWidth: "24em", height: "4.2em" }}
+										style={{ maxWidth: "20em", height: "4.2em" }}
 									/>
 								</Grid>
 								<Grid>
@@ -873,7 +872,7 @@ const LandingPage = (props) => {
 						</Grid>{" "}
 						<Hidden mdDown>
 							<Grid item container style={{ marginTop: "5em" }}>
-								<Grid item style={{ marginLeft: "17em" }}>
+								<Grid item style={{ marginLeft: "12em" }}>
 									<Typography style={{ marginBottom: "1em" }} variant="h5">
 										Step2
 									</Typography>
