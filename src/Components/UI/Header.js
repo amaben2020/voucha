@@ -22,6 +22,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import JSONpretty from "react-json-pretty";
 import StarIcon from "@material-ui/icons/Star";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
+
 //This is the elevation scroll function
 function ElevationScroll(props) {
 	const { children } = props;
@@ -448,6 +449,27 @@ function Header(props) {
 											, {user.name}{" "}
 										</Typography>
 									</Grid>
+
+									<div>
+										<Button
+											aria-controls="simple-menu"
+											aria-haspopup="true"
+											onClick={handleClick}
+										>
+											Open Menu
+										</Button>
+										<Menu
+											id="simple-menu"
+											anchorEl={anchorEl}
+											keepMounted
+											open={Boolean(anchorEl)}
+											onClose={handleClose}
+										>
+											<MenuItem onClick={handleClose}>Profile</MenuItem>
+											<MenuItem onClick={handleClose}>My account</MenuItem>
+											<MenuItem onClick={handleClose}>Logout</MenuItem>
+										</Menu>
+									</div>
 								</Grid>
 								<Grid style={{ marginRight: "20px", marginTop: "28px" }}>
 									<Button
