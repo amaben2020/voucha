@@ -118,20 +118,19 @@ export default function DonorDashboard() {
 				justify="center"
 				alignItems="center"
 			>
-				<Grid item>
+				<Grid item style={{ marginTop: -130 }}>
 					<Grid
 						container
 						direction={matchesXS ? "row" : matchesMD ? "row" : "column"}
 						style={{
-							padding: matchesMD ? "1em" : undefined,
+							padding: matchesMD ? "3em" : undefined,
 						}}
 					>
 						<Grid item>
 							<Typography
 								style={{
-									paddingTop: "3em",
 									color: "#fff",
-									marginLeft: "0.2em",
+									marginLeft: "1em",
 								}}
 								variant="h5"
 							>
@@ -207,7 +206,7 @@ export default function DonorDashboard() {
 								: matchesSM
 								? 0
 								: matchesMD
-								? "1em"
+								? "15em"
 								: undefined,
 							marginTop: matchesXS
 								? "-18em"
@@ -222,9 +221,9 @@ export default function DonorDashboard() {
 							<Card
 								style={{
 									borderRadius: "2em",
-									minHeight: matchesSM ? "10em" : matchesMD ? "18em" : "33em",
+									minHeight: matchesSM ? "10em" : matchesMD ? "18em" : "28em",
 									marginBottom: matchesSM ? "1.9em" : undefined,
-									minWidth: matchesXS ? "10.9em" : matchesSM ? "29em" : "30em",
+									minWidth: matchesXS ? "10.9em" : matchesSM ? "29em" : "25em",
 									marginLeft: matchesSM ? "7.0em" : "1em",
 									bottom: 0,
 									backgroundColor: "white-smoke",
