@@ -66,8 +66,8 @@ export const EnrollmentForm = ({ props, setNamee }) => {
 				<div className="buttons">
 					<button
 						style={{
-							marginTop: "2em",
-							marginLeft: matchesXS ? "5em" : "8em",
+							marginTop: "0.7em",
+							marginLeft: matchesXS ? "5em" : "2em",
 							background: matchesXS ? "#3E3B6B" : "#3E3B6B",
 							fontSize: "1rem",
 							fontWeight: 700,
