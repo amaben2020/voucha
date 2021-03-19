@@ -101,7 +101,12 @@ function DonorSignUp({ props }) {
 			className={classes.callToAction}
 			justify="space-between"
 		>
-			<Grid item container md={2} style={{ marginLeft: "5em" }}>
+			<Grid
+				item
+				container
+				md={2}
+				style={{ marginLeft: "1.5em", paddingBottom: "20em" }}
+			>
 				<Grid container direction="column">
 					<Grid item>
 						<img
@@ -119,7 +124,7 @@ function DonorSignUp({ props }) {
 				item
 				container
 				md={4}
-				style={{ marginLeft: "5em", paddingBottom: "20em" }}
+				style={{ marginLeft: "2em", paddingBottom: "40em" }}
 			>
 				<Grid container direction="column">
 					<Grid item>
@@ -150,7 +155,7 @@ function DonorSignUp({ props }) {
 					</Grid>
 				</Grid>
 			</Grid>
-			<Grid item container md={4}>
+			<Grid item container md={4} style={{ marginLeft: "-8em" }}>
 				<Grid container direction="column">
 					<Grid
 						item
@@ -163,9 +168,6 @@ function DonorSignUp({ props }) {
 					>
 						<DonorSignupForm />
 					</Grid>
-					<Button variant="contained" component={Link} to="/donordashboard">
-						CLICK TO VIEW DASHBOARD ONLY WHEN AUTHENTICATED
-					</Button>
 				</Grid>
 			</Grid>
 		</Grid>

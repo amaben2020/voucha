@@ -55,7 +55,7 @@ function DonorSigninForm({ props, setName, history }) {
 						<Form
 							onSubmit={handleSubmit}
 							style={{
-								padding: "2em",
+								padding: "1em",
 								marginTop: matchesXS ? "-15em" : undefined,
 								width: matchesXS ? "13em" : "25em",
 								marginLeft: matchesXS

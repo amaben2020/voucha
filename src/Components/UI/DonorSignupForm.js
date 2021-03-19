@@ -29,7 +29,7 @@ export const EnrollmentForm = ({ props, setNamee }) => {
 						className="form-input"
 						name="name"
 						type="text"
-						label="Display Name"
+						label="Name"
 						value={name}
 						onChange={handleName}
 						required
@@ -43,10 +43,20 @@ export const EnrollmentForm = ({ props, setNamee }) => {
 						onChange={handleEmail}
 						required
 					/>
+
 					<FormInput
 						className="form-input"
 						name="password"
 						label="Password (min: 6 chars)"
+						type="password"
+						value={password}
+						onChange={handlePassword}
+						required
+					/>
+					<FormInput
+						className="form-input"
+						name="password"
+						label="Confirm Password  "
 						type="password"
 						value={password}
 						onChange={handlePassword}
