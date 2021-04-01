@@ -86,14 +86,6 @@ function DonorSignUp({ props }) {
 	const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 	const { isAuthenticated } = useAuth0();
 
-	<Route
-		exact
-		path="/donordashboard"
-		render={(props) =>
-			isAuthenticated ? <Redirect to="/donordashboard" /> : null
-		}
-	/>;
-
 	return (
 		<Grid
 			container

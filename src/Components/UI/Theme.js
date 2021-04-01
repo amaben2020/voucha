@@ -21,19 +21,19 @@ export default createMuiTheme({
 	}, //this closes the palette option for typography and enables font-size change
 	typography: {
 		tab: {
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway, sans-serif",
 			textTransform: "none",
 			fontWeight: 700,
 			fontSize: "1rem",
 		},
 		estimate: {
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway, sans-serif",
 			fontSize: "1rem",
 			textTransform: "none",
 			color: arcBlue,
 		},
 		h2: {
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway, sans-serif",
 			fontWeight: 700,
 			fontSize: "2.5rem",
 			color: `${arcBlue}`,
@@ -41,7 +41,7 @@ export default createMuiTheme({
 		},
 		h6: {
 			fontWeight: 300,
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway, sans-serif",
 			color: arcBlack,
 			lineHeight: 1,
 			fontSize: "1.1rem",
@@ -58,19 +58,19 @@ export default createMuiTheme({
 			color: arcGrey,
 		},
 		h3: {
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway, sans-serif",
 			color: arcBlue,
 			fontSize: "2.5rem",
 		},
 		h5: {
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway, sans-serif",
 			color: "#000",
 			fontSize: "1.4rem",
 			fontWeight: 700,
 		},
 
 		h4: {
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway, sans-serif",
 			fontWeight: 700,
 			fontSize: "1.75rem",
 			color: arcBlue,
@@ -86,7 +86,7 @@ export default createMuiTheme({
 			color: arcBlue,
 			textTransform: "none",
 			borderRadius: 50,
-			fontFamily: "Open Sans",
+			fontFamily: "Raleway",
 			fontWeight: "bold",
 		},
 	},
