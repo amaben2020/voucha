@@ -213,7 +213,11 @@ export default function HowItWorks3(props) {
 												: matchesSM
 												? "11em"
 												: "25em",
-											maxWidth: matchesXS ? "7em" : matchesSM ? "12em" : "15em",
+											maxWidth: matchesXS
+												? "7em"
+												: matchesSM
+												? "12em"
+												: "11.1em",
 											marginLeft: "1em",
 											bottom: 0,
 											backgroundColor: "grey",

@@ -65,54 +65,42 @@ export default function HowItWorks1(props) {
 			container
 			className={classes.kid}
 			style={{
-				height: matchesXS
-					? "55em"
-					: matchesSM
-					? "45em"
-					: matchesMD
-					? "50em"
-					: " 40em",
-				minWidth: matchesXS ? "33.5em" : matchesSM ? "35em" : undefined,
+				height: matchesMD ? "70em" : " 60em",
+				minWidth: matchesXS ? "33.5em" : undefined,
 			}}
 		>
 			<Grid container direction="column" md={3}>
 				<Typography
 					style={{
-						marginLeft: matchesXS
-							? "2.5em"
-							: matchesSM
-							? "5em"
-							: matchesMD
-							? "2em"
-							: "3em",
-						fontSize: matchesXS
-							? "3rem"
-							: matchesSM
-							? "2rem"
-							: matchesMD
-							? "3rem"
-							: undefined,
-						marginTop: matchesSM ? "1em" : matchesMD ? "1em" : "3em",
+						marginLeft: matchesXS ? "2.5em" : "3em",
+						fontSize: matchesXS ? "3rem" : matchesMD ? "3rem" : undefined,
+						marginTop: matchesSM ? "1em" : "3em",
 					}}
 					variant="h4"
 				>
 					HOW IT WORKS
 				</Typography>
-				<Grid
-					item
-					style={{
-						marginLeft: matchesXS ? "1.8em" : matchesSM ? "2em" : "3em",
-						marginTop: matchesXS
-							? "2em"
-							: matchesSM
-							? "-5em"
-							: matchesMD
-							? "-5em"
-							: "3em",
-					}}
-				>
+				<Hidden mdDown>
+					<Button
+						component={Link}
+						to="/"
+						onClick={() => props.setValue(6)}
+						variant="contained"
+						color="secondary"
+						style={{
+							backgroundColor: "#f4f4f4",
+							borderRadius: "1em",
+							marginLeft: "3em",
+							width: "7em",
+							marginTop: "2em",
+						}}
+					>
+						&#x1F3E0; HOME
+					</Button>{" "}
+				</Hidden>
+				<Grid item style={{ marginLeft: matchesXS ? "1.8em" : "3em" }}>
 					<Typography
-						style={{ marginLeft: "1em", marginTop: "3em", padding: "1em" }}
+						style={{ marginLeft: "1em", marginTop: "2em", padding: "1em" }}
 						variant="h4"
 					>
 						Step 1
@@ -133,7 +121,7 @@ export default function HowItWorks1(props) {
 								width: "100%",
 								fontSize: 800,
 							}}
-							title="CREATE ACCOUNT"
+							title="Create Account"
 						/>
 						<Grid>
 							<Grid align="center" style={{ padding: "1.5em" }}>
@@ -145,7 +133,6 @@ export default function HowItWorks1(props) {
 										onClick={() => props.setValue(6)}
 										variant="contained"
 										color="secondary"
-										component={Link}
 										style={{
 											backgroundColor: "blue",
 											borderRadius: "3em",
@@ -166,20 +153,15 @@ export default function HowItWorks1(props) {
 					item
 					style={{
 						marginRight: "1em",
-						marginLeft: matchesXS
-							? "-3em"
-							: matchesSM
-							? "3em"
-							: matchesMD
-							? "12em"
-							: undefined,
-						marginTop: matchesXS ? "15em" : matchesSM ? "9em" : "2em",
+						marginLeft: matchesMD ? "12em" : undefined,
+						marginTop: matchesSM ? "-30em" : "2em",
 					}}
 				>
 					<img
+						alt="how it works 1"
 						src={Howitworksp1}
 						style={{
-							height: matchesXS ? "23em" : matchesSM ? "23em" : "35em",
+							height: matchesXS ? "29em" : "35em",
 							maxWidth: matchesXS ? "19em" : "20em",
 						}}
 					/>
@@ -187,40 +169,38 @@ export default function HowItWorks1(props) {
 			</Grid>
 			<Grid container direction="row" align="center" md={7}>
 				<Grid item container direction="column">
-					<Hidden mdDown>
-						<Grid
-							item
-							style={{
-								marginTop: matchesSM ? "-5em" : matchesMD ? "40em" : "4em",
-								marginLeft: matchesXS
-									? "-5em"
-									: matchesSM
-									? "-15em"
-									: matchesMD
-									? "-18em"
-									: "15em",
-							}}
+					<Grid
+						item
+						style={{
+							marginTop: matchesSM ? "-5em" : matchesMD ? "40em" : "4em",
+							marginLeft: matchesXS
+								? "-5em"
+								: matchesSM
+								? "-15em"
+								: matchesMD
+								? "-18em"
+								: "15em",
+						}}
+					>
+						<Typography
+							style={{ fontSize: matchesSM ? "2rem" : undefined }}
+							variant="h4"
 						>
-							<Typography
-								style={{ fontSize: matchesSM ? "2rem" : undefined }}
-								variant="h4"
-							>
-								Sign up as a {matchesSM ? <br /> : undefined}
-								<span style={{ fontSize: "2rem", fontWeight: "4rem" }}>
-									{" "}
-									DONOR{" "}
-								</span>{" "}
-								or{" "}
-								<span style={{ fontSize: "2rem", fontWeight: "4rem" }}>
-									{" "}
-									VENDOR{" "}
-								</span>{" "}
-							</Typography>
-						</Grid>{" "}
-					</Hidden>
+							Sign up as a {matchesSM ? <br /> : undefined}
+							<span style={{ fontSize: "2rem", fontWeight: "4rem" }}>
+								{" "}
+								DONOR{" "}
+							</span>{" "}
+							or{" "}
+							<span style={{ fontSize: "2rem", fontWeight: "4rem" }}>
+								{" "}
+								VENDOR{" "}
+							</span>{" "}
+						</Typography>
+					</Grid>{" "}
 					<Hidden mdDown>
 						<Grid item container style={{ marginTop: "5em" }}>
-							<Grid item style={{ marginLeft: matchesLG ? "13em" : "17em" }}>
+							<Grid item style={{ marginLeft: "12em" }}>
 								<Typography style={{ marginBottom: "1em" }} variant="h5">
 									Step2
 								</Typography>
@@ -283,7 +263,7 @@ export default function HowItWorks1(props) {
 									<Grid>
 										<Grid
 											align="center"
-											style={{ padding: "1em", paddingBottom: "3.5em" }}
+											style={{ padding: "1em", paddingBottom: "2.1em" }}
 										>
 											<Typography variant="h6" color="white" gutterBottom>
 												Fund your customized wallet
@@ -302,6 +282,7 @@ export default function HowItWorks1(props) {
 										marginLeft: "0.1em",
 										bottom: 0,
 										backgroundColor: "grey",
+
 										color: "white",
 										width: "100%",
 									}}
@@ -316,7 +297,10 @@ export default function HowItWorks1(props) {
 										title="Buy Vouchers"
 									/>
 									<Grid>
-										<Grid align="center" style={{ padding: "0.4em" }}>
+										<Grid
+											align="center"
+											style={{ padding: "0.4em", marginBottom: "1.2em" }}
+										>
 											<Typography variant="h6" color="white" gutterBottom>
 												Select the voucher category, amount and units to
 												distribute
@@ -345,6 +329,7 @@ export default function HowItWorks1(props) {
 											backgroundColor: "grey",
 											color: "black",
 											width: "50%",
+											textAlign: "center",
 											fontSize: 800,
 										}}
 										title="Distribute Vouchers"
@@ -353,7 +338,7 @@ export default function HowItWorks1(props) {
 										<Grid align="center" style={{ padding: "0.37em" }}>
 											<Typography variant="h6" color="white" gutterBottom>
 												Send your vouchers to individuls or groups
-												<p style={{ fontSize: "0.5em", fontWeight: 200 }}>
+												<p style={{ fontSize: "0.55em", fontWeight: 200 }}>
 													{" "}
 													We can help to set up distribution to specific
 													demography
@@ -365,40 +350,31 @@ export default function HowItWorks1(props) {
 							</Grid>
 						</Grid>
 					</Hidden>
-					<Hidden mdDown>
-						<Grid
-							item
+					<Grid
+						item
+						style={{
+							marginTop: "3em",
+							marginLeft: matchesSM ? "-15em" : matchesMD ? "-18em" : "15em",
+						}}
+					>
+						<Typography
 							style={{
-								marginTop: "3em",
-								marginLeft: matchesSM ? "-15em" : matchesMD ? "-18em" : "15em",
+								fontSize: matchesSM ? "1rem" : undefined,
 							}}
+							variant="h4"
 						>
-							<Typography
-								style={{
-									fontSize: matchesSM ? "1rem" : undefined,
-								}}
-								variant="h4"
-							>
-								We also provide end-to-end account <br /> management solutions
-								on request.
-							</Typography>
-						</Grid>
-					</Hidden>
+							We also provide end-to-end account <br /> management solutions on
+							request.
+						</Typography>
+					</Grid>
 				</Grid>
 			</Grid>
-
 			<Grid item container direction="column" md={1}>
 				<Grid
 					item
 					style={{
-						marginTop: matchesXS ? "5em" : matchesSM ? "5em" : undefined,
-						marginLeft: matchesXS
-							? "2em"
-							: matchesSM
-							? "2em"
-							: matchesMD
-							? "1em"
-							: "3em",
+						marginTop: matchesSM ? "-15em" : undefined,
+						marginLeft: matchesXS ? "25em" : matchesSM ? "35em" : "3em",
 					}}
 				>
 					<IconButton
