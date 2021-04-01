@@ -236,7 +236,7 @@ export default function HowItWorks5(props) {
 									</Grid>
 								</Hidden>
 								<Hidden mdDown>
-									<Grid item style={{ marginLeft: "1em", marginTop: "3em" }}>
+									<Grid item style={{ marginLeft: "0.2em", marginTop: "3em" }}>
 										<Typography style={{ padding: "1em" }} variant="h5">
 											Step4
 										</Typography>
@@ -272,75 +272,6 @@ export default function HowItWorks5(props) {
 										</Card>
 									</Grid>
 								</Hidden>
-								<Grid
-									item
-									style={{
-										marginLeft: matchesXS ? "2em" : matchesMD ? "5em" : "1em",
-										marginTop: matchesSM
-											? "-1em"
-											: matchesMD
-											? "0.5em"
-											: "-4em",
-									}}
-								>
-									<Typography
-										style={{ padding: "1em", marginLeft: "1em" }}
-										variant="h5"
-									>
-										Step5
-									</Typography>
-									<Card
-										style={{
-											minHeight: matchesXS ? "5em" : "25em",
-											maxHeight: matchesXS ? "16em" : undefined,
-											maxWidth: matchesXS
-												? "10em"
-												: matchesLG
-												? "13em"
-												: undefined,
-											marginLeft: "1em",
-											bottom: 0,
-											backgroundColor: "grey",
-											color: "white",
-											width: "100%",
-										}}
-									>
-										<CardHeader
-											style={{
-												backgroundColor: "grey",
-												color: "black",
-												width: "90%",
-												textAlign: matchesXS ? undefined : "center",
-												fontSize: 800,
-											}}
-											title="DISTRIBUTE VOUCHERS"
-										/>
-										<Grid>
-											<Grid align="center" style={{ padding: "1em" }}>
-												<Typography
-													style={{ fontSize: matchesXS ? "1rem" : undefined }}
-													variant="h5"
-													color="#000"
-													gutterBottom
-												>
-													Send your vouchers to individuals or groups
-												</Typography>
-												<Typography
-													style={{
-														paddingTop: "0.5em",
-														fontSize: matchesXS ? "0.6rem" : undefined,
-													}}
-													variant="h6"
-													color="black"
-													gutterBottom
-												>
-													We can help to set up distribution to specific
-													demography
-												</Typography>
-											</Grid>
-										</Grid>
-									</Card>
-								</Grid>
 							</Grid>
 						</Grid>
 					</Grid>
@@ -350,8 +281,8 @@ export default function HowItWorks5(props) {
 							style={{
 								marginRight: matchesSM ? "4em" : matchesMD ? "5em" : "1em",
 								marginTop: matchesXS ? "-32em" : matchesSM ? "-34em" : "2em",
-								marginLeft: matchesXS ? "13em" : matchesSM ? "25em" : undefined,
-								paddingRight: matchesSM ? "2em" : undefined,
+								marginLeft: matchesXS ? "13em" : matchesSM ? "25em" : "-3em",
+								paddingRight: matchesSM ? "2em" : "-5em",
 							}}
 						>
 							<img
@@ -365,9 +296,69 @@ export default function HowItWorks5(props) {
 					</Grid>
 				</Grid>
 			</Grid>
+			<Grid
+				item
+				style={{
+					marginLeft: matchesXS ? "2em" : matchesMD ? "5em" : "-4em",
+					marginTop: matchesSM ? "-1em" : matchesMD ? "0.5em" : "9em",
+				}}
+			>
+				<Typography
+					style={{ padding: "1em", marginLeft: "0.3em" }}
+					variant="h5"
+				>
+					Step5
+				</Typography>
+				<Card
+					style={{
+						//minHeight: matchesXS ? "5em" : "5em",
+						maxHeight: matchesXS ? "16em" : undefined,
+						maxWidth: matchesXS ? "10em" : matchesLG ? "10em" : undefined,
+						marginLeft: "1em",
+						bottom: 0,
+						backgroundColor: "grey",
+						color: "white",
+						width: "100%",
+					}}
+				>
+					<CardHeader
+						style={{
+							backgroundColor: "grey",
+							color: "black",
+							width: "90%",
+							textAlign: matchesXS ? undefined : "center",
+							fontSize: 800,
+						}}
+						title="DISTRIBUTE VOUCHERS"
+					/>
+					<Grid>
+						<Grid align="center" style={{ padding: "1em" }}>
+							<Typography
+								style={{ fontSize: matchesXS ? "1rem" : undefined }}
+								variant="h5"
+								color="#000"
+								gutterBottom
+							>
+								Send your vouchers to individuals or groups
+							</Typography>
+							<Typography
+								style={{
+									paddingTop: "0.5em",
+									fontSize: matchesXS ? "0.6rem" : undefined,
+								}}
+								variant="h6"
+								color="black"
+								gutterBottom
+							>
+								We can help to set up distribution to specific demography
+							</Typography>
+						</Grid>
+					</Grid>
+				</Card>
+			</Grid>
 			<Hidden mdDown>
-				<Grid container md={3}>
-					<Grid item style={{ marginTop: "5em" }}>
+				<Grid container md={3} style={{ paddingLeft: "2em" }}>
+					<Grid item style={{ marginTop: "2em" }}>
 						<Typography variant="h4">
 							Select an <span> OPTION. </span> <br />
 							Key in your desired voucher value and <br />
