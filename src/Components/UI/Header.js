@@ -80,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
 		...theme.typography.estimate,
 		borderRadius: "50px",
 		fontSize: "0.777rem",
+		width: "115px",
 		marginLeft: "90px",
 		cursor: "pointer",
 		boxShadow: "1px 1px 5px rgba(0,0,0, 0.75)",
