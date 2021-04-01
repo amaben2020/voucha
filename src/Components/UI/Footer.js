@@ -131,7 +131,7 @@ export default function Footer(props) {
 								item
 								className={classes.link}
 								component={Link}
-								to="/"
+								to="/howItWorks1"
 								onClick={() => props.setValue(0)}
 							>
 								<Typography>HOW IT WORKS |</Typography>

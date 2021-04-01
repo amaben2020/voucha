@@ -218,7 +218,7 @@ export default function HowItWorks4(props) {
 									item
 									style={{
 										marginLeft: matchesXS ? "2em" : matchesSM ? "4em" : "1em",
-										marginTop: "-3em",
+										marginTop: "-1em",
 									}}
 								>
 									<Typography
