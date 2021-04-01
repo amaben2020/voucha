@@ -567,7 +567,7 @@ const LandingPage = (props) => {
 									<img
 										alt="social impact"
 										src={socialimpact}
-										style={{ maxWidth: "20em", height: "4.9em" }}
+										style={{ maxWidth: "20em", height: "3.9em" }}
 									/>
 								</Grid>
 								<Grid>
